@@ -1,0 +1,18 @@
+.database-hero { padding-bottom: 30px; }
+.database-hero h1 { font-size: clamp(2.7rem,5vw,4.7rem); }
+.data-note { color: var(--muted); font-size: .85rem; max-width: 75ch; margin-top: 22px; }
+.database-filters { display: grid; grid-template-columns: minmax(0,2fr) repeat(3,minmax(0,1fr)) auto; gap: 14px; align-items: end; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.database-filters label { display: grid; gap: 8px; color: var(--muted); font-size: .8rem; font-weight: 700; min-width: 0; }
+.database-filters input, .database-filters select { width: 100%; min-width: 0; min-height: 46px; border: 1px solid var(--line); border-radius: 8px; padding: 10px; background: #081421; color: var(--text); font: inherit; }
+.database-filters button { color: var(--text); cursor: pointer; }
+#resultsStatus { color: var(--muted); padding: 8px 0; }
+.weapon-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-bottom: 60px; }
+.weapon-card { padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.weapon-card h2 { font-size: 1.5rem; margin: 10px 0 6px; }
+.weapon-card p { color: var(--muted); margin: 0 0 20px; }
+.weapon-card dl { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px 10px; margin: 0; }
+.weapon-card dt { color: var(--muted); font-size: .7rem; text-transform: uppercase; }
+.weapon-card dd { margin: 4px 0 0; font-weight: 750; }
+.empty-state { grid-column: 1/-1; padding: 40px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 18px; }
+@media(max-width:1000px) { .database-filters { grid-template-columns: repeat(2,minmax(0,1fr)); } .database-filters label:first-child { grid-column:1/-1; } .weapon-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .weapon-grid { grid-template-columns: minmax(0,1fr); } .database-filters { padding: 16px; gap: 10px; } }

@@ -7,6 +7,7 @@ Serve the repository with a static web server at http://127.0.0.1:8123/ (or set 
     node tests/featured-work.cjs
     node tests/featured-work-interactions.cjs
     node tests/snake.cjs
+    node tests/portfolio-content.cjs
 
 Screenshots and the 54-case layout report go to test-results/ (override with QA_OUTPUT). The interaction check uses the public MDN CC0 flower video as a temporary playback fixture; it does not add that video to the portfolio.
 
@@ -21,6 +22,6 @@ Project data lives at the top of work-samples.js. Existing images arrays use the
       { type: 'video', src: 'Videos/gameplay.mp4', poster: 'Images/example.webp', alt: 'Gameplay footage' }
     ]
 
-The shell and stage dimensions are shared for images, video, and embedded projects. Database content is a screenshot case study; its live button opens the PHP backend on the school server. GitHub Pages does not execute that PHP.
+The shell and stage dimensions are shared for images, video, and embedded projects. Database content is a screenshot case study. Its action opens the styled, read-only explorer at Project/arc-database/index.html. The explorer searches a 77-record snapshot from the school database captured on September 15, 2026. It does not synchronize with or modify the PHP backend. GitHub Pages does not execute PHP.
 
 site.css is the active shared stylesheet. work-samples.css only imports it for compatibility. Legacy ARC Raiders assets are preserved.

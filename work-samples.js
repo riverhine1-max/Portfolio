@@ -2,7 +2,7 @@ const projects = {
     "gilded-fate": {
         title: "Gilded Fate",
         type: "Unity • C# • Roguelike Deckbuilder",
-        status: "Active development",
+        status: "Flagship project · Active development",
         description: "My current flagship project: a dark-fantasy roguelike deckbuilder built in Unity. It includes three playable heroes with distinct systems, a branching map, card/relic collections, status effects, controller support, progression, combat presentation, and ongoing balance and polish work.",
         details: [
             ["Role", "Game direction, systems design, implementation, UI/UX, balancing, QA"],
@@ -88,17 +88,17 @@ const projects = {
     "arc-db": {
         title: "ARC Raiders Database",
         type: "PHP • Database • Web",
-        status: "Case study · externally hosted PHP",
+        status: "Case study · Interactive explorer",
         description: "A searchable game-data project that combines PHP with a database-backed interface. It was one of my first projects that went beyond a static page and worked with structured server-side data.",
         details: [
             ["Focus", "Searchable structured data and server-side rendering"],
             ["Tech", "PHP, HTML, CSS, database queries"],
             ["What I learned", "Connecting a web interface to stored data and building search/filter behavior"]
         ],
-        images: ["Images/DatabaseScreenshot.png"],
-        mediaNote: "Database screenshot · Live PHP demo opens on the school server.",
+        images: ["Images/optimized/database-card.webp"],
+        mediaNote: "Styled database explorer · Search and compare a September 2026 data snapshot.",
         links: [
-            ["Open live database", "https://hiner2027.smtchs.org/testdb/DBArc.php?search=&search_column=weapon_name", true]
+            ["Open database explorer", "Project/arc-database/index.html", true]
         ]
     }
 };
@@ -162,7 +162,11 @@ function renderMedia(project) {
                 const button = element('button', 'gallery-thumb');
                 button.type = 'button';
                 button.setAttribute('aria-label', `Show ${item.type === 'video' ? 'video' : 'screenshot'} ${i + 1}`);
-                const thumb = element('img'); thumb.src = item.poster || item.src; thumb.alt = '';
+                const thumb = element('img');
+                thumb.src = item.poster || (item.src.startsWith('Images/portfolio-projects/')
+                    ? item.src.replace('Images/portfolio-projects/', 'Images/optimized/').replace('.webp', '-800.webp')
+                    : item.src);
+                thumb.alt = '';
                 if (item.type !== 'video' || item.poster) button.append(thumb);
                 else button.textContent = '▶';
                 button.addEventListener('click', () => showGalleryItem(i));
@@ -286,3 +290,18 @@ window.addEventListener('hashchange', () => {
 });
 const initialProject = location.hash.slice(1);
 if (Object.hasOwn(projects, initialProject)) openProject(initialProject);
+
+// The optional timeline uses the same modal, data, and focus-return behavior.
+document.querySelectorAll('[data-open-project]').forEach(button => button.addEventListener('click', () => openProject(button.dataset.openProject, button)));
+const viewButtons = document.querySelectorAll('[data-project-view]');
+function setProjectView(view) {
+    const timeline = view === 'timeline';
+    document.getElementById('projectGallery').hidden = timeline;
+    document.getElementById('projectTimeline').hidden = !timeline;
+    viewButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.projectView === view)));
+    const url = new URL(location.href);
+    if (timeline) url.searchParams.set('view', 'timeline'); else url.searchParams.delete('view');
+    history.replaceState(null, '', url);
+}
+viewButtons.forEach(button => button.addEventListener('click', () => setProjectView(button.dataset.projectView)));
+if (new URLSearchParams(location.search).get('view') === 'timeline') setProjectView('timeline');
