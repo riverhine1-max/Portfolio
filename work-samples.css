@@ -428,3 +428,10 @@ main { width: min(1400px, calc(100% - 40px)); margin: 0 auto; }
     .modal-info { padding: 24px 20px 30px; }
     .modal-heading-row { flex-direction: column; padding-right: 40px; }
 }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+.modal-shell > *, .modal-main-media, .modal-info { min-width: 0; }
+.modal-shell { width: 100%; }
+.modal-info { overflow-wrap: anywhere; }
+@media (max-width: 1050px) { .modal-shell { grid-template-columns: minmax(0, 1fr); } .modal-main-media img { max-height: 55vh; } }

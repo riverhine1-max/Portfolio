@@ -109,6 +109,8 @@ const modalStatus = document.getElementById("modalStatus");
 const modalDescription = document.getElementById("modalDescription");
 const modalDetails = document.getElementById("modalDetails");
 const modalActions = document.getElementById("modalActions");
+let previousFocus;
+const pageRegions = document.querySelectorAll('body > header, body > main, body > footer');
 
 function renderImageGallery(images, title) {
     const first = images[0];
@@ -139,6 +141,8 @@ function renderLivePreview(url, title) {
 function openProject(projectId) {
     const project = projects[projectId];
     if (!project) return;
+    previousFocus = document.activeElement;
+    pageRegions.forEach(region => region.inert = true);
 
     modalTitle.textContent = project.title;
     modalType.textContent = project.type;
@@ -167,6 +171,8 @@ function closeModal() {
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
     modalMedia.innerHTML = "";
+    pageRegions.forEach(region => region.inert = false);
+    previousFocus?.focus();
 }
 
 document.querySelectorAll(".project-card").forEach(card => {
@@ -182,4 +188,13 @@ document.querySelectorAll(".project-card").forEach(card => {
 document.querySelectorAll("[data-close-modal]").forEach(item => item.addEventListener("click", closeModal));
 document.addEventListener("keydown", event => {
     if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
+    if (event.key === "Tab" && modal.classList.contains("open")) {
+        const items = [...modal.querySelectorAll('button, a[href], iframe')];
+        const first = items[0], last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault(); last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault(); first.focus();
+        }
+    }
 });

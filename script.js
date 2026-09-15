@@ -56,13 +56,13 @@ document.querySelectorAll(".fullscreen-btn").forEach(btn => {
 });
 
 // CLOSE LIGHTBOX
-closeBtn.addEventListener("click", () => {
+closeBtn?.addEventListener("click", () => {
     lightbox.style.display = "none";
     lightboxFrame.innerHTML = ""; // stop iframe
 });
 
 // OPTIONAL: click outside to close
-lightbox.addEventListener("click", (e) => {
+lightbox?.addEventListener("click", (e) => {
     if (e.target === lightbox) {
         lightbox.style.display = "none";
         lightboxFrame.innerHTML = "";
@@ -80,18 +80,18 @@ function showSlide(index) {
     slides[index].classList.add("active");
 }
 
-nextBtn.addEventListener("click", () => {
+nextBtn?.addEventListener("click", () => {
     current = (current + 1) % slides.length;
     showSlide(current);
 });
 
-prevBtn.addEventListener("click", () => {
+prevBtn?.addEventListener("click", () => {
     current = (current - 1 + slides.length) % slides.length;
     showSlide(current);
 });
 
 document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
+    if (e.key === "Escape" && lightbox) {
         lightbox.style.display = "none";
         lightboxFrame.innerHTML = "";
     }
