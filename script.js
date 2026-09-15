@@ -24,7 +24,7 @@ document.querySelectorAll(".skill-tag").forEach(btn => {
         popup.style.display = "block";
 
         const progress = popup.querySelector(".progress");
-        progress.style.strokeDashoffset = 314; 
+        progress.style.strokeDashoffset = 314;
         const offset = 314 - (314 * percent) / 100;
         setTimeout(() => {
             progress.style.strokeDashoffset = offset;
@@ -33,7 +33,7 @@ document.querySelectorAll(".skill-tag").forEach(btn => {
         btn.addEventListener("mouseleave", () => {
             popup.style.display = "none";
             popup.innerHTML = '';
-        }, { once: true }); 
+        }, { once: true });
     });
 });
 
