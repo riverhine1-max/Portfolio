@@ -1,0 +1,19 @@
+.page-intro { padding: 70px 0 40px; }
+.page-intro h1 { font-size: clamp(2.8rem, 8vw, 5rem); margin: 10px 0 20px; letter-spacing: -.05em; }
+.page-intro p, .personal-section p { color: var(--muted); max-width: 65ch; }
+.certificate-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-bottom: 60px; }
+.certificate-grid .project { border: 1px solid var(--line); border-radius: 18px; background: var(--panel); padding: 22px; }
+.cert-img { width: 100%; height: 200px; object-fit: contain; background: #fff; border-radius: 10px; }
+.certificate-details { color: var(--muted); font-size: .9rem; }
+.home-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.home-project { text-decoration: none; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--panel); }
+.home-project img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.home-project > div { padding: 26px; }
+.home-project h3 { font-size: 1.8rem; margin: 12px 0; }
+.home-project p { color: var(--muted); }
+.home-process { margin-top: 60px; }
+.personal-section { padding-bottom: 60px; }
+.resume-preview { text-align: center; padding-bottom: 60px; }
+.resume-preview img { max-width: min(100%, 850px); }
+@media(max-width: 900px) { .certificate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media(max-width: 600px) { .certificate-grid, .home-projects { grid-template-columns: minmax(0, 1fr); } .page-intro { padding-top: 40px; } }

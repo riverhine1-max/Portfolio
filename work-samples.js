@@ -186,6 +186,12 @@ document.querySelectorAll(".project-card").forEach(card => {
 });
 
 document.querySelectorAll("[data-close-modal]").forEach(item => item.addEventListener("click", closeModal));
+// A restored page must never retain the background's disabled dialog state.
+window.addEventListener("pageshow", () => {
+    closeModal();
+    const projectId = location.hash.slice(1);
+    if (Object.hasOwn(projects, projectId)) openProject(projectId);
+});
 document.addEventListener("keydown", event => {
     if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
     if (event.key === "Tab" && modal.classList.contains("open")) {
