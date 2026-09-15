@@ -12,13 +12,9 @@ for(const id of ['gilded-fate','exploding-nuts','website-demos','arc-ui','snake'
  await p.locator('.modal-close').click();
 }
 await p.locator('[data-project="gilded-fate"]').click();const rect=await p.locator('#projectModal').boundingBox();
+await p.evaluate(()=>window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:false})));ok(await p.locator('#projectModal').evaluate(e=>e.open),'late page load closed the dialog');
 await p.evaluate(()=>{projects['gilded-fate'].media=[{type:'video',src:'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',alt:'QA video fixture'}];openProject('gilded-fate');});
 const video=p.locator('#modalMedia video');await video.evaluate(async e=>{e.muted=true;await e.play()});ok(await video.evaluate(e=>e.videoWidth>0),'video failed');ok(Math.abs((await p.locator('#projectModal').boundingBox()).height-rect.height)<1,'video shift');await p.locator('.modal-close').click();
 await p.goto((process.env.TEST_URL || 'http://127.0.0.1:8123/')+'WorkSample.html#gilded-fate');ok(await p.locator('#projectModal').evaluate(e=>e.open),'deep link');await p.locator('.modal-close').click();ok(!p.url().includes('#'),'deep link cleanup');
 await p.emulateMedia({reducedMotion:'reduce'});ok(await p.locator('.project-card').first().evaluate(e=>getComputedStyle(e).transitionDuration==='0s'),'reduced motion');
 console.log('PASS: equal card heights, six focus cycles, scroll locking, close visibility, video playback, deep links, reduced motion');await b.close();})();
-
-
-
-
-

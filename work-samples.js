@@ -272,13 +272,17 @@ document.querySelectorAll('.project-card').forEach(card => {
         if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(card.dataset.project, card); }
     });
 });
-window.addEventListener('pageshow', () => {
-    if (modal.open) closeModal();
-    document.body.classList.remove('modal-open');
-    const id = location.hash.slice(1);
-    if (Object.hasOwn(projects, id)) openProject(id);
+window.addEventListener('pageshow', event => {
+    // Initial load can finish after someone has already opened a project.
+    // Only a back/forward cache restoration needs stale dialog cleanup.
+    if (event.persisted) {
+        closeModal();
+        document.body.classList.remove('modal-open');
+    }
 });
 window.addEventListener('hashchange', () => {
     const id = location.hash.slice(1);
     if (Object.hasOwn(projects, id)) openProject(id);
 });
+const initialProject = location.hash.slice(1);
+if (Object.hasOwn(projects, initialProject)) openProject(initialProject);
