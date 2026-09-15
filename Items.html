@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arc Raiders - Character Customization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <img src="Images/Logo.png" alt="Arc Raiders Logo" id="logo">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Enemies.html">Enemies</a></li>
+      <li><a href="Weapons.html">Game Modes</a></li>
+      <li><a href="Items.html">Character Customization</a></li>
+    </ul>
+  </nav>
+</header>
+
+<h1 class="Title">Character Customization</h1>
+  <p class="currency-text">
+    Currency used to buy cosmetics are Tech Scrap and Raid Credits. Some are give to you by deafult.
+  </p>
+
+<div class="containerforcurrency">
+  <div class="currency-row">
+    <div class="card">
+      <img src="Images/CustomizationImages/Currecny/Tech Scrap.png" alt="Tech Scrap" class="currency-img"
+      data-title="Tech Scrap"
+      data-desc="Tech Scrap is a type of currency that is earned in-game. It can be spent to purchase items from Shani or for unlocking cosmetics in Decks.">
+      <p>Tech Scrap</p>
+    </div>
+
+    <div class="card">
+      <img src="Images/CustomizationImages/Currecny/Raid Credits.png" alt="Raid Credits" class="currency-img"
+      data-title="Raid Credits"
+      data-desc="Raid Credits is a type of currency earned in-game. It is a premium currency that can be acquired through your platform's storefront, the in-game menu, completing Raid Decks, or by participating in active Projects and Live Events.  Raid Credits are used to purchase cosmetics and premium Raid Decks when they become available.">
+      <p>Raid Credits</p>
+    </div>
+
+    <div class="card">
+      <img src="Images/CustomizationImages/Currecny/1" alt="Raider Tokens" class="currency-img"
+      data-title="Raider Tokens"
+      data-desc="Assorted Seeds is a Common item used as currency to trade with Celeste.">
+      <p>Assorted Seeds</p>
+    </div>
+
+    <div class="card">
+      <img src="Images/CustomizationImages/Currecny/2" alt="Raider Tokens" class="currency-img"
+      data-title="Raider Tokens"
+      data-desc="Coins is a type of currency earned in-game. It can be used to purchase items from Tian Wen, Apollo, and Lance. It is also used during the final phase of the Expedition project to determine the total value of items Raiders have.">
+      <p>Coins</p>
+    </div>
+
+    <div class="card">
+      <img src="Images/CustomizationImages/Currecny/3" alt="Raider Tokens" class="currency-img"
+      data-title="Raider Tokens"
+      data-desc="Merit is a type of currency earned in-game during Live Events. It can be spent to unlock new items on a reward track, such as  Raider Tokens and cosmetics.">
+      <p>Merit</p>
+    </div>
+
+    <div class="card">
+      <img src="Images/CustomizationImages/Currecny/4" alt="Raider Tokens" class="currency-img"
+      data-title="Raider Tokens"
+      data-desc="Skill Points is a type of currency earned in-game by leveling up. Each level grants one Skill Point, up to a maximum of 76. Completing Expeditions can grant bonus Skill Points. They are spent to learn new Skills.">
+      <p>Skill Points</p>
+    </div>
+  </div>
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <img id="popup-img" src="" alt="">
+    <h3 id="popup-title"></h3>
+    <p id="popup-desc"></p>
+  </div>
+</div>
+
+<div class="container">
+  Click a category to view all cosmetic options available for your character in <em>ARC Raiders</em>. 
+  These choices are <strong>cosmetic only</strong> and don't affect gameplay stats or performance.
+</div>
+
+<section class="customization-cards">
+
+  <div class="card">
+    <div class="icon">👤</div>
+    <h3>1. Body Type</h3>
+    <p>Choose between the available physical body templates.</p>
+    <div class="option-grid">
+      <p>Female</p>
+      <p>Male</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">😐</div>
+    <h3>2. Face Preset</h3>
+    <p>Pick your character's face from presets.</p>
+    <div class="option-grid">
+      <img src="Images/CustomizationImages/FacePresets/Face1.webp" alt="Face 1"
+      data-title="Face 1"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face2.webp" alt="Face 2"
+      data-title="Face 2"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face3.webp" alt="Face 3"
+      data-title="Face 3"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face4.webp" alt="Face 4"
+      data-title="Face 4"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face5.webp" alt="Face 5"
+      data-title="Face 5"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face6.webp" alt="Face 6"
+      data-title="Face 6"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face7.webp" alt="Face 7"
+      data-title="Face 7"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face8.webp" alt="Face 8"
+      data-title="Face 8"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face9.webp" alt="Face 9"
+      data-title="Face 9"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face10.webp" alt="Face 10"
+      data-title="Face 10"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face11.webp" alt="Face 11"
+      data-title="Face 11"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face12.webp" alt="Face 12"
+      data-title="Face 12"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face13.webp" alt="Face 13"
+      data-title="Face 13"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face14.webp" alt="Face 14"
+      data-title="Face 14"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face15.webp" alt="Face 15"
+      data-title="Face 15"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face16.webp" alt="Face 16"
+      data-title="Face 16"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face17.webp" alt="Face 17"
+      data-title="Face 17"
+      data-desc="Its a default item.">
+
+      <img src="Images/CustomizationImages/FacePresets/Face18.webp" alt="Face 18"
+      data-title="Face 18"
+      data-desc="The cost is 50 Tech Scrap. Obtained from Raider Deck AR/RD 003.">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">🎭</div>
+    <h3>3. Face Style</h3>
+    <p>Adjust small stylistic differences within the selected face preset.</p>
+    <div class="option-grid">
+        <img src="Images/CustomizationImages/FaceStyle/None.webp" alt="Face Style: None"
+        data-title="Face Style: None"
+        data-desc="Its a default item.">
+
+        <img src="Images/CustomizationImages/FaceStyle/AcneScar.webp" alt="Face Style: Acne Scar"
+        data-title="Face Style: Acne Scar"
+        data-desc="The cost is 200 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/BandaidCheek.webp" alt="Face Style: Bandaid Cheek"
+        data-title="Face Style: Bandaid Cheek"
+        data-desc="The cost is 200 Tech Scrap. Obtained from Raider Deck AR/RD 001.">
+
+        <img src="Images/CustomizationImages/FaceStyle/BandaidNose.webp" alt="Face Style: Bandaid Nose"
+        data-title="Face Style: Bandaid Nose"
+        data-desc="The cost is 200 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/BlackEye.webp" alt="Face Style: Black Eye"
+        data-title="Face Style: Black Eye"
+        data-desc="Obtained from Trials Season 2: (Rookie III).">
+
+        <img src="Images/CustomizationImages/FaceStyle/BlueForeheadPaint.webp" alt="Face Style: Blue Forehead Paint"
+        data-title="Face Style: Blue Forehead Paint"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/Bruised.webp" alt="Face Style: Bruised"
+        data-title="Face Style: Bruised"
+        data-desc="Its a default item. Deluxe Edition: Pre-Order Bonus.">
+
+        <img src="Images/CustomizationImages/FaceStyle/DirtFull.webp" alt="Face Style: Dirt Full"
+        data-title="Face Style: Dirt Full"
+        data-desc="Obtained from the Event: Breaking New Grounds.">
+
+        <img src="Images/CustomizationImages/FaceStyle/DirtSpray.webp" alt="Face Style: Dirt Spray"
+        data-title="Face Style: Dirt Spray"
+        data-desc="The cost is 30 Tech Scrap. Obtained from Raider Deck AR/RD 00.">
+
+        <img src="Images/CustomizationImages/FaceStyle/EyeBand.webp" alt="Face Style: Eye Band"
+        data-title="Face Style: Eye Band"
+        data-desc="Obtained from Special Requirements. (Twicth Drops: 16 Dec 2025 - 12 Jan 2026, Must Watch for 1 hour).">
+
+        <img src="Images/CustomizationImages/FaceStyle/EyeLiner.webp" alt="Face Style: Eye Liner"
+        data-title="Face Style: Eye Liner"
+        data-desc="The cost is 200 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/EyeScar.webp" alt="Face Style: Eye Scar"
+        data-title="Face Style: Eye Scar"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/EyeStripe.webp" alt="Face Style: Eye Stripe"
+        data-title="Face Style: Eye Stripe"
+        data-desc="Obtained from Trials Season 2: (Rookie III).">
+
+        <img src="Images/CustomizationImages/FaceStyle/Freckles.webp" alt="Face Style: Freckles"
+        data-title="Face Style: Freckles"
+        data-desc="The cost is 100 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/Henna.webp" alt="Face Style: Henna"
+        data-title="Face Style: Henna"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/Krakentatoo.webp" alt="Face Style: Krakentatoo"
+        data-title="Face Style: Kraken Tatoo"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/LipScar.webp" alt="Face Style: Lip Scar"
+        data-title="Face Style: Lip Scar"
+        data-desc="Its a default item. Purchasing Deluxe Edition.">
+
+        <img src="Images/CustomizationImages/FaceStyle/MilitaryPaint.webp" alt="Face Style: Military Paint"
+        data-title="Face Style: Military Paint"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/MilitaryPaintWhite.webp" alt="Face Style: Military Paint White"
+        data-title="Face Style: Military Paint White"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/NoseStripe.webp" alt="Face Style: Nose Stripe"
+        data-title="Face Style: Nose Stripe"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/OilSplatter.webp" alt="Face Style: Oil Splatter"
+        data-title="Face Style: Oil Splatter"
+        data-desc="The cost is 200 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/PaintedMask.webp" alt="Face Style: Painted Mask"
+        data-title="Face Style: Painted Mask"
+        data-desc="The cost is $19.99. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SharkBite.webp" alt="Face Style: Shark Bite"
+        data-title="Face Style: Shark Bite"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SmokeyEye.webp" alt="Face Style: Smokey Eye"
+        data-title="Face Style: Smokey Eye"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SmokeyEyeRed.webp" alt="Face Style: Smokey Eye Red"
+        data-title="Face Style: Smokey Eye Red"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SnakeTatoo.webp" alt="Face Style: Snake Tatoo"
+        data-title="Face Style: Snake Tatoo"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/Soot.webp" alt="Face Style: Soot"
+        data-title="Face Style: Soot"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store."> 
+
+        <img src="Images/CustomizationImages/FaceStyle/SportFacePAint.webp" alt="Face Style: Sport Face Paint"
+        data-title="Face Style: Sport Face Paint"
+        data-desc="The cost is 40 Tech Scrap. Obtained from Raider Deck AR/RD 002.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SportFacePaintblue.webp" alt="Face Style: Sport Face Paint Blue"
+        data-title="Face Style: Sport Face Paint Blue"
+        data-desc="Obtained from the Event: Shared Watch.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SprayedEyes.webp" alt="Face Style: Sprayed Eyes"
+        data-title="Face Style: Sprayed Eyes"
+        data-desc="The cost is 300 Raider Tokens. Obtained from the in-game store.">
+
+        <img src="Images/CustomizationImages/FaceStyle/SprayedEyesred.webp" alt="Face Style: Sprayed Eyes Red"
+        data-title="Face Style: Sprayed Eyes Red"
+        data-desc="Obtained from the Project: Flickering Flames.">
+
+        <img src="Images/CustomizationImages/FaceStyle/TribalEye.webp" alt="Face Style: Tribal Eye"
+        data-title="Face Style: Tribal Eye"
+        data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+    </div>
+</div>
+
+  <div class="card">
+    <div class="icon">💇‍♂️</div>
+    <h3>4. Hairstyle</h3>
+    <p>Select your hairstyle including hair color choices.</p>
+    <div class="option-grid">
+      
+      <img src="Images/CustomizationImages/Hair/1.webp" 
+        alt="Hair 1"
+        data-title="None"
+        data-desc="Its a default item. No hair style.">
+      
+      <img src="Images/CustomizationImages/Hair/2.webp" 
+      alt="Afro Fade"
+      data-title="Afro Fade"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item">
+
+      <img src="Images/CustomizationImages/Hair/3.webp" 
+      alt="Bowl Cut"
+      data-title="Bowl Cut"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 20 Tech Scrap. Obtained from Raider Deck AR/RD 002.">
+      
+      <img src="Images/CustomizationImages/Hair/4.webp" 
+      alt="Braided Bun"
+      data-title="Braided Bun"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is $19.99. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/5.webp" alt="Buzcut"
+      data-title="Buzcut"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item">
+      
+      <img src="Images/CustomizationImages/Hair/7.webp" alt="Curly Mullet"
+      data-title="Curly Mullet"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/8.webp" alt="Curly Ponytail"
+      data-title="Curly Ponytail"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+      
+      <img src="Images/CustomizationImages/Hair/9.webp" alt="Culy Short"
+      data-title="Curly Short"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. the cost is 500 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/10.webp" alt="Curtain Fade"
+      data-title="Curtain Fade"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 400 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/11.webp" alt="French Braids"
+      data-title="French Braids"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. its a default item.">
+      
+      <img src="Images/CustomizationImages/Hair/12.webp" alt="Long Afro"
+      data-title="Long Afro"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+      
+      <img src="Images/CustomizationImages/Hair/13.webp" alt="Low Bun"
+      data-title="Low Bun"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 400 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/14.webp" alt="Messy Bakclsick"
+      data-title="Messy Bakclsick"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+      
+      <img src="Images/CustomizationImages/Hair/6.webp" alt="Middle Fade"
+      data-title="Middle Fade"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/15.webp" alt="Mohwak"
+      data-title="Mohwak"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Hair/16.webp" alt="Mullet"
+      data-title="Mullet"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 90 Tech Scrap. Obtained from Raider Deck AR/RD 001.">
+      
+      <img src="Images/CustomizationImages/Hair/17.webp" alt="Receding"
+      data-title="Receding"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. the cost is 70 Tech Scrap. Obtained from Raider Deck AR/RD 001.">
+      
+      <img src="Images/CustomizationImages/Hair/18.webp" alt="Short Wavy"
+      data-title="Short Wavy"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+      
+      <img src="Images/CustomizationImages/Hair/19.webp" alt="Sidecut Dreads"
+      data-title="Sidecut Dreads"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+      
+      <img src="Images/CustomizationImages/Hair/20.webp" alt="Slick Bob"
+      data-title="Slick Bob"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">🧔</div>
+    <h3>5. Facial hair</h3>
+    <p>Select your facial hair style and color.</p>
+    <div class="option-grid">
+      <img src="Images/CustomizationImages/FacialHair/1.webp" alt="None"
+      data-title="None"
+      data-desc="No facial hair. Its a default item.">
+
+      <img src="Images/CustomizationImages/FacialHair/2.webp" alt="Full Beard"
+      data-title="Full Beard"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. the cost is 150 Tech Scrap. Obtained from Raider Deck AR/RD 003.">
+
+      <img src="Images/CustomizationImages/FacialHair/3.webp" alt="Moustache"
+      data-title="Moustache"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/FacialHair/4.webp" alt="Stubble"
+      data-title="Stubble"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. Its a default item.">
+
+      <img src="Images/CustomizationImages/FacialHair/5.webp" alt="Stubble Beard"
+      data-title="Stubble Beard"
+      data-desc="Colors can be chosen for Black, Blonde, Brown, Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">🎒</div>
+    <h3>6. Backpack</h3>
+    <p>Choose a backpack cosmetic to show off your style.</p>
+    <div class="option-grid">
+      <img src="Images/CustomizationImages/Backpacks/1.webp" alt="Agriculturalist"
+      data-title="Agriculturalist"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/2.webp" alt="Archeologist"
+      data-title="Archeologist"
+      data-desc="Can be chosen in Brown, White, Green and Yellow. The cost is 100 Tech Scrap. Obtained from Raider Deck AR/RD 001 and the Trails">
+
+      <img src="Images/CustomizationImages/Backpacks/3.webp" alt="Bruiser"
+      data-title="Bruiser"
+      data-desc="The cost is 50 Tech Scrap. Obtained from Raider Deck AR/RD 002.">
+
+      <img src="Images/CustomizationImages/Backpacks/4.webp" alt="Cartographer"
+      data-title="Cartographer"
+      data-desc="The cost is 600 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/5.webp" alt="Courier"
+      data-title="Courier"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/6.webp" alt="Cratfsman"
+      data-title="Craftsman"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/7.webp" alt="Diver"
+      data-title="Diver"
+      data-desc="Can be chosen in Red, Brown, and White. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/8.webp" alt="Electrican"
+      data-title="Electrican"
+      data-desc="Can be chosen in Grey, Black, White, Emerald Wave(Promo: Nvidia). The cost is 600 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/9.webp" alt="Egineer"
+      data-title="Engineer"
+      data-desc="Can be chosen in Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+      
+      <img src="Images/CustomizationImages/Backpacks/10.webp" alt="Envoy"
+      data-title="Envoy"
+      data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/11.webp" alt="Fuel Jockey"
+      data-title="Fuel Jockey"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/12.webp" alt="Hicker"
+      data-title="Hiker"
+      data-desc="Can be chosen in Green(Raider Deck 001), Black(Clearer Skies), Hatching, Orange Blue(Breaking New Ground), Server Slammer, and Sky Ice(Discord Quest).">
+
+      <img src="Images/CustomizationImages/Backpacks/13.webp" alt="Memorlialist"
+      data-title="Memorlialist"
+      data-desc="Can be chosen in Orange and Blue. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/14.webp" alt="Origin"
+      data-title="Origin"
+      data-desc="Its a default item. The original backpack cosmetic.">
+
+      <img src="Images/CustomizationImages/Backpacks/15.webp" alt="Paramedic"
+      data-title="Paramedic"
+      data-desc="The cost is 50 tech scrap. Obtained from Raider Deck AR/RD 003.">
+
+      <img src="Images/CustomizationImages/Backpacks/16.webp" alt="Pathfinder"
+      data-title="Pathfinder"
+      data-desc="Its a default item. Deluxe Edition: Pre-Order Bonus.">
+
+      <img src="Images/CustomizationImages/Backpacks/17.webp" alt="Passenger"
+      data-title="Passenger"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/18.webp" alt="Radio Mountaineer"
+      data-title="Radio Mountaineer"
+      data-desc="Can be chosen in Brown and Beige. The cost is 600 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/19.webp" alt="Reliquary"
+      data-title="Reliquary"
+      data-desc="The cost is $19.99. Obtained from the in-game store." >
+
+      <img src="Images/CustomizationImages/Backpacks/20.webp" alt="Sailor"
+      data-title="Sailor"
+      data-desc="Can be chosen in Brown and Full Leather. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/21.webp" alt="Salvager"
+      data-title="Salvager"
+      data-desc="Its a default item. Deluxe Edition: Pre-Order Bonus.">
+
+      <img src="Images/CustomizationImages/Backpacks/22.webp" alt="Traveler"
+      data-title="Traveler"
+      data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/Backpacks/23.webp" alt="Urchin Havester"
+      data-title="Urchin Havester"
+      data-desc="Can be chosen in Grey and Red. The cost is 500 Raider Tokens. Obtained from the in-game store.">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">🛠️</div>
+    <h3>7. Raider Tool</h3>
+    <p>Customize your Raider tool with different colors and designs.</p>
+    <div class="option-grid">
+      <img src="Images/CustomizationImages/RaiderTools/1.webp" alt="Basic"
+      data-title="Basic"
+      data-desc="The basic Raider Tool. Its a default item.">
+
+      <img src="Images/CustomizationImages/RaiderTools/2.webp" alt="Boat Hook"
+      data-title="Boat Hook"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/RaiderTools/3.webp" alt="Gilded Pickaxe"
+      data-title="Gilded Pickaxe"
+      data-desc="Awarded to any Raiders who logged in prior to 14 January 2026.">
+
+      <img src="Images/CustomizationImages/RaiderTools/4.webp" alt="IceBreaker"
+      data-title="IceBreaker"
+      data-desc=" The cost is 80 Tech Scrap. Obtained from Raider Deck AR/RD 002.">
+
+      <img src="Images/CustomizationImages/RaiderTools/5.webp" alt="Snowy Mountain Pick"
+      data-title="Snowy Mountain Pick"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/RaiderTools/6.webp" alt="Space Wrench"
+      data-title="Space Wrench"
+      data-desc="Obtained from the Project Flickering Flames.">
+
+      <img src="Images/CustomizationImages/RaiderTools/7.webp" alt="Ritual Staff"
+      data-title="Ritual Staff"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/RaiderTools/8.webp" alt="Spygalss Staff"
+      data-title="Spygalss Staff"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store">
+
+      <img src="Images/CustomizationImages/RaiderTools/9.webp" alt="Thruster Hammer"
+      data-title="Thruster Hammer"
+      data-desc="The cost is $19.99. Obtained from the in-game store.">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">🐔</div>
+    <h3>8. Scrappy (Pet Companion) Cosmetics</h3>
+    <p>Change the color of your Scrappy companion.</p>
+    <div class="option-grid">
+      <img src="Images/CustomizationImages/ScrappyColor/1.webp" alt="Austria White"
+      data-title="Austria White"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyColor/2.webp" alt="Ayam Black"
+      data-title="Ayam Black"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyColor/3.webp" alt="Brown"
+      data-title="Brown"
+      data-desc="Its a default item. Brown is the original color of Scrappy.">
+
+      <img src="Images/CustomizationImages/ScrappyColor/4.webp" alt="Buff Rock"
+      data-title="Buff Rock"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyColor/5.webp" alt="Welsummer"
+      data-title="Welsummer"
+      data-desc="Its a default item. Deluxe Edition: Pre-Order Bonus.">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="icon">🪖</div>
+    <h3>9. Scrappy Outfits</h3>
+    <p>Dress up your Scrappy companion with different outfits.</p>
+    <div class="option-grid">
+      <img src="Images/CustomizationImages/ScrappyCustom/1.webp" alt="None"
+      data-title="None"
+      data-desc="No outfit. Its a default item.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/2.webp" alt="Astronaut Helmet"
+      data-title="Astronaut Helmet"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/3.webp" alt="Batting Helmet"
+      data-title="BBatting Helmet"
+      data-desc="Obtained from the Event Shared Watch.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/4.webp" alt="BeeKeeper's Veil"
+      data-title="BeeKeeper's Veil"
+      data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/5.webp" alt="Brigade Helmet"
+      data-title="Brigade Helmet"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/6.webp" alt="Bucket"
+      data-title="Bucket"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/7.webp" alt="Cowboy Hat"
+      data-title="Cowboy Hat"
+      data-desc="Its a default item. Deluxe Edition: Pre-Order Bonus">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/8.webp" alt="Diver"
+      data-title="Diver"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/9.webp" alt="Fencer Glasses"
+      data-title="Fencer Glasses"
+      data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/10.webp" alt="Fez"
+      data-title="Fez"
+      data-desc="The cost is 400 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/11.webp" alt="Janitor Cap"
+      data-title="Janitor Cap"
+      data-desc="Obtained from Expidition 1: Permannent Reward.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/12.webp" alt="Plot Helmet"
+      data-title="Plot Helmet"
+      data-desc="The cost is 500 Raider Tokens. Obtained from the in-game store.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/13.webp" alt="Surgeon Hat"
+      data-title="Surgeon Hat"
+      data-desc="The cost is 90 Tech Scrap. Obtained from Raider Deck AR/RD 003.">
+
+      <img src="Images/CustomizationImages/ScrappyCustom/14.webp" alt="Wasp Hunter Helmet"
+      data-title="Wasp Hunter Helmet"
+      data-desc="The cost is $19.99. Obtained from the in-game store.">
+    </div>
+  </div>
+
+</section>
+ 
+
+<footer>
+  <p>&copy; 2025 RiverH Portfolio. All rights reserved.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    document.querySelectorAll('.option-grid').forEach(grid => {
+       
+      if (grid !== card.querySelector('.option-grid')) {
+        grid.style.display = 'none'; 
+      }
+    });
+
+    const grid = card.querySelector('.option-grid');
+    grid.style.display = grid.style.display === 'grid' ? 'none' : 'grid';
+  });
+});
+
+const popup = document.getElementById('popup');
+const popupImg = document.getElementById('popup-img');
+const popupTitle = document.getElementById('popup-title');
+const popupDesc = document.getElementById('popup-desc');
+const closeBtn = document.querySelector('.close-btn');
+
+// click image
+document.querySelectorAll('.option-grid img').forEach(img => {
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    popup.style.display = 'flex';
+    popupImg.src = img.src;
+    popupTitle.textContent = img.dataset.title || "Item";
+    popupDesc.textContent = img.dataset.desc || "No description available.";
+  });
+});
+
+// close popup
+closeBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// click outside to close
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+  }
+});
+</script>
+<script>
+  // Currency popup script
+  const currencyPopup = document.getElementById('popup');
+  const currencyPopupImg = document.getElementById('popup-img');
+  const currencyPopupTitle = document.getElementById('popup-title');
+  const currencyPopupDesc = document.getElementById('popup-desc');
+  const currencyCloseBtn = document.querySelector('.close-btn');
+
+  // Select all currency images
+  document.querySelectorAll('.currency-img').forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent triggering other clicks
+
+      // Show popup
+      currencyPopup.style.display = 'flex';
+      currencyPopupImg.src = img.src;
+      currencyPopupImg.alt = img.alt;
+      currencyPopupTitle.textContent = img.dataset.title || "Currency";
+      currencyPopupDesc.textContent = img.dataset.desc || "No description available.";
+    });
+  });
+
+  // Close popup button
+  currencyCloseBtn.addEventListener('click', () => {
+    currencyPopup.style.display = 'none';
+  });
+
+  // Click outside to close
+  currencyPopup.addEventListener('click', (e) => {
+    if (e.target === currencyPopup) {
+      currencyPopup.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
