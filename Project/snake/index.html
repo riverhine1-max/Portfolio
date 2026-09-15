@@ -1,41 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake | River Hine</title>
-    <link rel="stylesheet" href="game.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Snake | River Hine</title><link rel="stylesheet" href="game.css?v=2"></head>
 <body>
-    <main class="snake-app">
-        <section id="mainMenu" class="panel menu-panel">
-            <span class="kicker">Early JavaScript Project</span>
-            <h1>Snake</h1>
-            <p>A small canvas game I built while learning JavaScript game loops, state, input, collision, and rendering.</p>
-            <button id="startGameButton">Start Game</button>
-            <div class="controls-note">Use the arrow keys to move.</div>
-        </section>
-
-        <section id="gameContainer" class="panel game-panel" style="display:none;">
-            <div class="game-toolbar">
-                <div>
-                    <label for="mapSize">Board size</label>
-                    <select id="mapSize">
-                        <option value="15">15 × 15</option>
-                        <option value="20" selected>20 × 20</option>
-                        <option value="25">25 × 25</option>
-                    </select>
-                </div>
-                <button id="Playbutton">Restart countdown</button>
-            </div>
-            <canvas id="game" width="520" height="520"></canvas>
-            <div id="gameOverScreen" class="game-over" style="display:none;">
-                <h2>Game Over</h2>
-                <p>You hit the wall or your own tail.</p>
-                <button id="playAgainButton">Play Again</button>
-            </div>
-        </section>
-    </main>
-    <script src="game.js"></script>
-</body>
-</html>
+<main class="snake-app">
+<section id="mainMenu" class="panel menu-panel">
+<span class="kicker">JavaScript · Canvas</span><h1>Snake</h1><p>Collect food, grow your snake, and avoid the walls.</p>
+<button id="startGameButton" type="button">Start Game</button><div class="controls-note">Arrow keys / WASD · or use the direction buttons</div>
+</section>
+<section id="gameContainer" class="panel game-panel" hidden>
+<div class="game-toolbar"><label for="mapSize">Board <select id="mapSize"><option value="15">15 × 15</option><option value="20" selected>20 × 20</option><option value="25">25 × 25</option></select></label><span id="score" aria-live="off">Score: 0</span><button id="Playbutton" type="button">Restart</button></div>
+<div class="board-area"><canvas id="game" width="520" height="520" tabindex="0" aria-label="Snake game board. Use arrow keys or WASD to move."></canvas>
+<div id="gameOverScreen" class="game-over" hidden><h2 id="gameOverTitle">Game Over</h2><p id="gameOverMessage">You hit the wall or your own tail.</p><button id="playAgainButton" type="button">Play Again</button></div></div>
+<div class="direction-controls" aria-label="Touch direction controls"><button type="button" data-direction="left" aria-label="Move left">←</button><button type="button" data-direction="up" aria-label="Move up">↑</button><button type="button" data-direction="down" aria-label="Move down">↓</button><button type="button" data-direction="right" aria-label="Move right">→</button></div>
+</section>
+</main><script src="game.js?v=2"></script>
+</body></html>

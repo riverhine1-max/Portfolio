@@ -6,8 +6,8 @@
     <meta name="description" content="Selected game development, web development, and UI/UX projects by River Hine.">
     <title>Work Samples | River Hine</title>
     <link rel="icon" type="image/png" href="Images/icons8-code-brackets-100.png">
-    
-<link rel="stylesheet" href="site.css?v=20260915d">
+
+<link rel="stylesheet" href="site.css?v=20260915e">
 </head>
 <body>
 
@@ -139,7 +139,7 @@
                 <article class="project-card" data-project="arc-db" tabindex="0" role="button" aria-label="Open Arc Raiders database project details">
                     <div class="project-media live-frame-wrap">
                         <img src="Images/DatabaseScreenshot.png" alt="ARC Raiders database project screenshot">
-                        <span class="status-pill live">Live database</span>
+                        <span class="status-pill">Database case study</span>
                         <span class="open-hint">View project ↗</span>
                     </div>
                     <div class="project-content">
@@ -174,26 +174,21 @@
         <a href="mailto:river.hine1@gmail.com">river.hine1@gmail.com</a>
     </footer>
 
-    <div class="project-modal" id="projectModal" aria-hidden="true">
-        <div class="modal-backdrop" data-close-modal></div>
-        <div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <button class="modal-close" type="button" data-close-modal aria-label="Close project details">×</button>
-            <div class="modal-media" id="modalMedia"></div>
-            <div class="modal-info">
-                <div class="modal-heading-row">
-                    <div>
-                        <span class="project-type" id="modalType"></span>
-                        <h2 id="modalTitle"></h2>
-                    </div>
-                    <span class="modal-status" id="modalStatus"></span>
-                </div>
+    <dialog role="dialog" class="project-modal" id="projectModal" aria-modal="true" aria-labelledby="modalTitle">
+        <header class="project-modal__bar"><span>Project preview</span><button class="modal-close" type="button" aria-label="Close project details" autofocus>×</button></header>
+        <div class="project-modal__content">
+            <section class="project-modal__media" id="modalMedia" aria-label="Project media"></section>
+            <section class="project-modal__details" aria-label="Project information" tabindex="0">
+                <span class="project-type" id="modalType"></span>
+                <h2 id="modalTitle"></h2>
+                <p class="modal-status" id="modalStatus"></p>
                 <p id="modalDescription"></p>
-                <div class="modal-details" id="modalDetails"></div>
-                <div class="modal-actions" id="modalActions"></div>
-            </div>
+                <dl class="modal-details" id="modalDetails"></dl>
+                <div class="project-modal__actions" id="modalActions"></div>
+            </section>
         </div>
-    </div>
+    </dialog>
 
-    <script src="work-samples.js?v=20260915c"></script>
+    <script src="work-samples.js?v=20260915e"></script>
 </body>
 </html>

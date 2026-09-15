@@ -79,7 +79,8 @@ const projects = {
             ["Tech", "HTML, CSS, JavaScript, Canvas"],
             ["What I learned", "Input handling, collision logic, rendering, timers, and resetting game state"]
         ],
-        live: "Project/snake/index.html",
+        live: "Project/snake/index.html?embed=1",
+        interactive: true,
         links: [
             ["Play Snake", "Project/snake/index.html", true]
         ]
@@ -87,115 +88,172 @@ const projects = {
     "arc-db": {
         title: "ARC Raiders Database",
         type: "PHP • Database • Web",
-        status: "Live",
+        status: "Case study · externally hosted PHP",
         description: "A searchable game-data project that combines PHP with a database-backed interface. It was one of my first projects that went beyond a static page and worked with structured server-side data.",
         details: [
             ["Focus", "Searchable structured data and server-side rendering"],
             ["Tech", "PHP, HTML, CSS, database queries"],
             ["What I learned", "Connecting a web interface to stored data and building search/filter behavior"]
         ],
-        live: "https://hiner2027.smtchs.org/testdb/DBArc.php?search=&search_column=weapon_name",
+        images: ["Images/DatabaseScreenshot.png"],
+        mediaNote: "Database screenshot · Live PHP demo opens on the school server.",
         links: [
             ["Open live database", "https://hiner2027.smtchs.org/testdb/DBArc.php?search=&search_column=weapon_name", true]
         ]
     }
 };
 
-const modal = document.getElementById("projectModal");
-const modalMedia = document.getElementById("modalMedia");
-const modalTitle = document.getElementById("modalTitle");
-const modalType = document.getElementById("modalType");
-const modalStatus = document.getElementById("modalStatus");
-const modalDescription = document.getElementById("modalDescription");
-const modalDetails = document.getElementById("modalDetails");
-const modalActions = document.getElementById("modalActions");
-let previousFocus;
-const pageRegions = document.querySelectorAll('body > header, body > main, body > footer');
+// Every media kind uses the same reserved stage and control strip.
+const modal = document.getElementById('projectModal');
+const modalMedia = document.getElementById('modalMedia');
+const modalTitle = document.getElementById('modalTitle');
+const closeButton = modal.querySelector('.modal-close');
+let previousFocus = null;
+let galleryIndex = 0;
+let galleryItems = [];
+let activeProject = null;
 
-function renderImageGallery(images, title) {
-    const first = images[0];
-    modalMedia.innerHTML = `
-        <div class="modal-main-media"><img id="modalMainImage" src="${first}" alt="${title} screenshot"></div>
-        <div class="modal-gallery">
-            ${images.map((image, index) => `
-                <button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-gallery-image="${image}" aria-label="Show screenshot ${index + 1}">
-                    <img src="${image}" alt="">
-                </button>
-            `).join("")}
-        </div>`;
+function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+}
 
-    const mainImage = document.getElementById("modalMainImage");
-    modalMedia.querySelectorAll(".gallery-thumb").forEach(button => {
-        button.addEventListener("click", () => {
-            mainImage.src = button.dataset.galleryImage;
-            modalMedia.querySelectorAll(".gallery-thumb").forEach(item => item.classList.remove("active"));
-            button.classList.add("active");
-        });
+function showGalleryItem(index) {
+    galleryIndex = (index + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[galleryIndex];
+    const stage = modalMedia.querySelector('.project-modal__stage');
+    stage.querySelector('video')?.pause();
+    const media = element(item.type === 'video' ? 'video' : 'img');
+    if (item.type === 'video') {
+        media.controls = true;
+        media.playsInline = true;
+        media.preload = 'metadata';
+        if (item.poster) media.poster = item.poster;
+        media.setAttribute('aria-label', item.alt);
+    } else {
+        media.alt = item.alt;
+        media.decoding = 'async';
+    }
+    media.addEventListener('error', () => {
+        if (stage.contains(media)) stage.append(element('p', 'media-fallback', 'This media could not load. Try another item or open the project using the links.'));
     });
+    media.src = item.src;
+    stage.replaceChildren(media);
+    modalMedia.querySelector('.gallery-counter').textContent = `${galleryIndex + 1} / ${galleryItems.length}`;
+    modalMedia.querySelectorAll('.gallery-thumb').forEach((button, i) => button.setAttribute('aria-pressed', String(i === galleryIndex)));
 }
 
-function renderLivePreview(url, title) {
-    modalMedia.innerHTML = `<div class="modal-main-media"><iframe src="${url}" title="${title} live preview" loading="eager"></iframe></div>`;
+function renderMedia(project) {
+    modalMedia.replaceChildren();
+    const stage = element('div', 'project-modal__stage');
+    const controls = element('div', 'project-modal__gallery');
+    modalMedia.append(stage, controls);
+    // Optional media entries support { type: 'video', src, poster, alt } without a new layout.
+    galleryItems = project.media || (project.images || []).map((src, i) => ({ type: 'image', src, alt: `${project.title} — screenshot ${i + 1}` }));
+    if (galleryItems.length) {
+        if (galleryItems.length > 1) {
+            const previous = element('button', 'gallery-arrow', '‹');
+            previous.type = 'button'; previous.setAttribute('aria-label', 'Previous media');
+            previous.addEventListener('click', () => showGalleryItem(galleryIndex - 1));
+            const thumbs = element('div', 'gallery-thumbs');
+            galleryItems.forEach((item, i) => {
+                const button = element('button', 'gallery-thumb');
+                button.type = 'button';
+                button.setAttribute('aria-label', `Show ${item.type === 'video' ? 'video' : 'screenshot'} ${i + 1}`);
+                const thumb = element('img'); thumb.src = item.poster || item.src; thumb.alt = '';
+                if (item.type !== 'video' || item.poster) button.append(thumb);
+                else button.textContent = '▶';
+                button.addEventListener('click', () => showGalleryItem(i));
+                thumbs.append(button);
+            });
+            const next = element('button', 'gallery-arrow', '›');
+            next.type = 'button'; next.setAttribute('aria-label', 'Next media');
+            next.addEventListener('click', () => showGalleryItem(galleryIndex + 1));
+            controls.append(previous, thumbs, next);
+        } else controls.append(element('p', 'media-caption', project.mediaNote || 'Project screenshot'));
+        const counter = element('span', 'gallery-counter');
+        counter.setAttribute('aria-live', 'polite');
+        controls.append(counter);
+        showGalleryItem(0);
+    } else if (project.live) {
+        const iframe = element('iframe', project.interactive ? 'project-modal__interactive' : 'project-modal__browser');
+        iframe.title = `${project.title} — ${project.interactive ? 'playable game' : 'live website preview'}`;
+        iframe.tabIndex = 0;
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox');
+        iframe.src = project.live;
+        iframe.addEventListener('load', () => {
+            // Same-origin demos can forward Escape even when focus is inside the frame.
+            try { iframe.contentDocument?.addEventListener('keydown', event => {
+                if (event.key === 'Escape') { event.preventDefault(); closeModal(); }
+            }); } catch { /* Cross-origin pages retain browser-native dialog handling. */ }
+        });
+        stage.append(iframe);
+        controls.append(element('p', 'media-caption', project.interactive ? 'Click game to focus · Arrow keys / WASD · Touch controls' : 'Live website preview · Scroll inside the preview or open the full project.'));
+    }
 }
 
-function openProject(projectId) {
+function openProject(projectId, trigger) {
     const project = projects[projectId];
     if (!project) return;
-    previousFocus = document.activeElement;
-    pageRegions.forEach(region => region.inert = true);
-
+    previousFocus = trigger || document.querySelector(`[data-project="${projectId}"]`) || document.activeElement;
+    activeProject = projectId;
     modalTitle.textContent = project.title;
-    modalType.textContent = project.type;
-    modalStatus.textContent = project.status;
-    modalDescription.textContent = project.description;
-
-    modalDetails.innerHTML = project.details.map(([label, value]) => `
-        <div class="detail-card"><strong>${label}</strong><span>${value}</span></div>
-    `).join("");
-
-    modalActions.innerHTML = project.links.map(([label, url, primary]) => `
-        <a class="${primary ? "primary-link" : ""}" href="${url}" ${url.startsWith("http") ? 'target="_blank" rel="noopener noreferrer"' : ''}>${label} ↗</a>
-    `).join("");
-
-    if (project.images?.length) renderImageGallery(project.images, project.title);
-    else if (project.live) renderLivePreview(project.live, project.title);
-
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-    document.querySelector(".modal-close").focus();
+    document.getElementById('modalType').textContent = project.type;
+    document.getElementById('modalStatus').textContent = project.status;
+    document.getElementById('modalDescription').textContent = project.description;
+    const details = document.getElementById('modalDetails');
+    details.replaceChildren(...project.details.map(([label, value]) => {
+        const card = element('div', 'detail-card');
+        card.append(element('dt', '', label), element('dd', '', value));
+        return card;
+    }));
+    const actions = document.getElementById('modalActions');
+    actions.replaceChildren(...project.links.map(([label, url, primary]) => {
+        const link = element('a', primary ? 'primary-link' : '', `${label} ↗`);
+        link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        return link;
+    }));
+    renderMedia(project);
+    document.body.classList.add('modal-open');
+    if (!modal.open) modal.showModal();
+    modal.querySelector('.project-modal__content').scrollTop = 0;
+    modal.querySelector('.project-modal__details').scrollTop = 0;
+    closeButton.focus({ preventScroll: true });
 }
 
+function cleanupModal() {
+    if (!activeProject) return;
+    modalMedia.querySelector('video')?.pause();
+    modalMedia.replaceChildren(); // Unload running games, video and website frames.
+    document.body.classList.remove('modal-open');
+    if (location.hash.slice(1) === activeProject) history.replaceState(null, '', location.pathname + location.search);
+    activeProject = null;
+    previousFocus?.focus({ preventScroll: true });
+    previousFocus = null;
+}
 function closeModal() {
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-    modalMedia.innerHTML = "";
-    pageRegions.forEach(region => region.inert = false);
-    previousFocus?.focus();
+    if (modal.open) modal.close();
+    cleanupModal();
 }
-
-document.querySelectorAll(".project-card").forEach(card => {
-    card.addEventListener("click", () => openProject(card.dataset.project));
-    card.addEventListener("keydown", event => {
-        if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            openProject(card.dataset.project);
-        }
-    });
+closeButton.addEventListener('click', closeModal);
+modal.addEventListener('cancel', event => { event.preventDefault(); closeModal(); });
+modal.addEventListener('close', () => {
+    if (!modal.open) cleanupModal();
 });
-
-document.querySelectorAll("[data-close-modal]").forEach(item => item.addEventListener("click", closeModal));
-// A restored page must never retain the background's disabled dialog state.
-window.addEventListener("pageshow", () => {
-    closeModal();
-    const projectId = location.hash.slice(1);
-    if (Object.hasOwn(projects, projectId)) openProject(projectId);
-});
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape" && modal.classList.contains("open")) closeModal();
-    if (event.key === "Tab" && modal.classList.contains("open")) {
-        const items = [...modal.querySelectorAll('button, a[href], iframe')];
+// Only a full backdrop click closes; dragging from inside the dialog does not.
+let pointerStartedOutside = false;
+function outside(event) {
+    const r = modal.getBoundingClientRect();
+    return event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom;
+}
+modal.addEventListener('pointerdown', event => { pointerStartedOutside = outside(event); });
+modal.addEventListener('click', event => { if (pointerStartedOutside && outside(event)) closeModal(); });
+modal.addEventListener('keydown', event => {
+    if (event.key === 'Tab') {
+        const items = [...modal.querySelectorAll('button, a[href], iframe, video[controls], [tabindex="0"]')]
+            .filter(item => !item.disabled && item.getClientRects().length);
         const first = items[0], last = items[items.length - 1];
         if (event.shiftKey && document.activeElement === first) {
             event.preventDefault(); last.focus();
@@ -203,4 +261,24 @@ document.addEventListener("keydown", event => {
             event.preventDefault(); first.focus();
         }
     }
+    if (galleryItems.length > 1 && !event.target.closest('video') && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+        event.preventDefault(); showGalleryItem(galleryIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+});
+document.querySelectorAll('.project-card').forEach(card => {
+    card.setAttribute('aria-haspopup', 'dialog');
+    card.addEventListener('click', () => openProject(card.dataset.project, card));
+    card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(card.dataset.project, card); }
+    });
+});
+window.addEventListener('pageshow', () => {
+    if (modal.open) closeModal();
+    document.body.classList.remove('modal-open');
+    const id = location.hash.slice(1);
+    if (Object.hasOwn(projects, id)) openProject(id);
+});
+window.addEventListener('hashchange', () => {
+    const id = location.hash.slice(1);
+    if (Object.hasOwn(projects, id)) openProject(id);
 });
