@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake | River Hine</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <main class="snake-app">
+        <section id="mainMenu" class="panel menu-panel">
+            <span class="kicker">Early JavaScript Project</span>
+            <h1>Snake</h1>
+            <p>A small canvas game I built while learning JavaScript game loops, state, input, collision, and rendering.</p>
+            <button id="startGameButton">Start Game</button>
+            <div class="controls-note">Use the arrow keys to move.</div>
+        </section>
+
+        <section id="gameContainer" class="panel game-panel" style="display:none;">
+            <div class="game-toolbar">
+                <div>
+                    <label for="mapSize">Board size</label>
+                    <select id="mapSize">
+                        <option value="15">15 × 15</option>
+                        <option value="20" selected>20 × 20</option>
+                        <option value="25">25 × 25</option>
+                    </select>
+                </div>
+                <button id="Playbutton">Restart countdown</button>
+            </div>
+            <canvas id="game" width="520" height="520"></canvas>
+            <div id="gameOverScreen" class="game-over" style="display:none;">
+                <h2>Game Over</h2>
+                <p>You hit the wall or your own tail.</p>
+                <button id="playAgainButton">Play Again</button>
+            </div>
+        </section>
+    </main>
+    <script src="game.js"></script>
+</body>
+</html>

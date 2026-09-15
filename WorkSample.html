@@ -3,111 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Sample</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="Images/icons8-code-brackets-100.png" rel="icon" type="image/png">
+    <meta name="description" content="Selected game development, web development, and UI/UX projects by River Hine.">
+    <title>Work Samples | River Hine</title>
+    <link rel="icon" type="image/png" href="Images/icons8-code-brackets-100.webp">
+    <link rel="stylesheet" href="work-samples.css">
 </head>
 <body>
-<div class="page-wrapper">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="River Hine home">
+            <span class="brand-mark">RH</span>
+            <span>
+                <strong>River Hine</strong>
+                <small>Game Developer • Web Developer • Designer</small>
+            </span>
+        </a>
+
+        <nav class="top-nav" aria-label="Portfolio navigation">
+            <a href="index.html">Home</a>
+            <a href="Resume.html">Resume</a>
+            <a href="Certifications.html">Certifications</a>
+            <a class="active" href="WorkSample.html">Work Samples</a>
+        </nav>
+    </header>
+
     <main>
-        <header>
-            <h1>River Hine</h1>
-            <p class="subtitle">Full Stack Developer & Creative Coder</p>
-            <nav>
-                <ul>
-                    <li><a href="Index.html">Home</a></li>
-                    <li><a href="Resume.html">Resume</a></li>
-                    <li><a href="Certifications.html">Certifications</a></li>
-                    <li><a href="WorkSample.html">Work Samples</a></li>
-                </ul>
-            </nav>
-        </header>
+        <section class="hero">
+            <div class="eyebrow">Selected work • 2025–2026</div>
+            <h1>Projects I’ve actually built.</h1>
+            <p class="hero-copy">
+                Games, interactive systems, websites, databases, and UI experiments. I started by building with
+                HTML, CSS, and JavaScript, then expanded into Unity and C# as my projects became more ambitious.
+            </p>
+            <div class="hero-actions">
+                <a class="button primary" href="#projects">Explore projects</a>
+                <a class="button secondary" href="https://github.com/riverhine1-max" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+            </div>
+        </section>
 
-        <div class="container">
-            <section>
-                <h2>Work Sample</h2>
-                <p>Welcome to my Work Sample page! Here, you'll find a selection of projects that showcase my skills and creativity as a Full Stack Developer and Creative Coder. Each project highlights different aspects of my expertise, from web development to design.</p>
-            </section>
+        <section class="process-strip" aria-label="Development process">
+            <div>
+                <span class="process-kicker">How I build</span>
+                <strong>Human-directed, AI-assisted.</strong>
+            </div>
+            <p>
+                I use AI tools to speed up debugging, iteration, brainstorming, and implementation support. I direct
+                the projects, choose the systems and design, test the results, make the final decisions, and keep refining
+                the work until it matches the experience I’m trying to create.
+            </p>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Project gallery</span>
+                    <h2>Featured work</h2>
+                </div>
+                <p>Click any project for a larger preview, screenshots, details, and links.</p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card project-card-featured" data-project="gilded-fate" tabindex="0" role="button" aria-label="Open Gilded Fate project details">
+                    <div class="project-media">
+                        <img src="Images/portfolio-projects/gilded-fate-combat.webp" alt="Gilded Fate combat screen">
+                        <span class="status-pill live">Active development</span>
+                        <span class="open-hint">View project ↗</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title-row">
+                            <div>
+                                <span class="project-type">Unity • C# • Game Development</span>
+                                <h3>Gilded Fate</h3>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <p>A dark-fantasy roguelike deckbuilder with three playable heroes, branching routes, hundreds of cards, relics, status systems, controller support, and a growing presentation layer.</p>
+                        <div class="tag-row">
+                            <span>Unity</span><span>C#</span><span>Systems Design</span><span>UI/UX</span><span>Balancing</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card project-card-featured" data-project="exploding-nuts" tabindex="0" role="button" aria-label="Open Exploding Nuts project details">
+                    <div class="project-media">
+                        <img src="Images/portfolio-projects/exploding-nuts-home.webp" alt="Exploding Nuts home screen">
+                        <span class="status-pill">Web → Unity evolution</span>
+                        <span class="open-hint">View project ↗</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title-row">
+                            <div>
+                                <span class="project-type">HTML / CSS / JavaScript • Unity / C#</span>
+                                <h3>Exploding Nuts</h3>
+                            </div>
+                            <span class="project-year">2025–26</span>
+                        </div>
+                        <p>An arena roguelite project that began as a browser game and became a bigger Unity/C# experiment with progression, characters, weapons, lore, and 3D gameplay.</p>
+                        <div class="tag-row">
+                            <span>JavaScript</span><span>3D</span><span>Unity</span><span>C#</span><span>Game Systems</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="website-demos" tabindex="0" role="button" aria-label="Open local business redesign project details">
+                    <div class="project-media live-frame-wrap">
+                        <iframe class="card-live-frame" src="https://riverhine1-max.github.io/Website-Demos/" title="Website redesign demo portfolio preview" loading="lazy" tabindex="-1"></iframe>
+                        <div class="frame-shield"></div>
+                        <span class="status-pill live">Live</span>
+                        <span class="open-hint">View project ↗</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-type">Web Design • Real-world outreach</span>
+                        <h3>Local Business Website Redesigns</h3>
+                        <p>A growing set of unofficial redesign concepts for Treasure Valley businesses, built as realistic client-facing demos and hosted with GitHub Pages.</p>
+                        <div class="tag-row"><span>HTML</span><span>CSS</span><span>Responsive Design</span><span>GitHub Pages</span></div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="arc-ui" tabindex="0" role="button" aria-label="Open Arc Raiders UI project details">
+                    <div class="project-media live-frame-wrap">
+                        <iframe class="card-live-frame" src="Project/arc-raiders/index.html" title="ARC Raiders UX and UI concept preview" loading="lazy" tabindex="-1"></iframe>
+                        <div class="frame-shield"></div>
+                        <span class="status-pill school">UI/UX study</span>
+                        <span class="open-hint">View project ↗</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-type">HTML • CSS • UX/UI</span>
+                        <h3>ARC Raiders UX/UI Study</h3>
+                        <p>An early interface study focused on organizing game information, navigation, visual hierarchy, and presenting game systems in a themed website.</p>
+                        <div class="tag-row"><span>HTML</span><span>CSS</span><span>UI/UX</span><span>Information Design</span></div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="snake" tabindex="0" role="button" aria-label="Open Snake game project details">
+                    <div class="project-media live-frame-wrap">
+                        <iframe class="card-live-frame" src="Project/snake/index.html" title="JavaScript Snake game preview" loading="lazy" tabindex="-1"></iframe>
+                        <div class="frame-shield"></div>
+                        <span class="status-pill school">Early project</span>
+                        <span class="open-hint">Play / view ↗</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-type">JavaScript • Canvas</span>
+                        <h3>Snake Game</h3>
+                        <p>One of my earlier JavaScript projects, with adjustable board size, keyboard controls, collision detection, randomized food, a countdown, and replay flow.</p>
+                        <div class="tag-row"><span>JavaScript</span><span>HTML Canvas</span><span>Game Loop</span><span>Input</span></div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="arc-db" tabindex="0" role="button" aria-label="Open Arc Raiders database project details">
+                    <div class="project-media live-frame-wrap">
+                        <img src="Images/DatabaseScreenshot.webp" alt="ARC Raiders database project screenshot">
+                        <span class="status-pill live">Live database</span>
+                        <span class="open-hint">View project ↗</span>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-type">PHP • Database • Web</span>
+                        <h3>ARC Raiders Database</h3>
+                        <p>A searchable database interface that combines server-side PHP with structured game data and a web front end.</p>
+                        <div class="tag-row"><span>PHP</span><span>HTML</span><span>CSS</span><span>Database</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="growth-section">
+            <div>
+                <span class="eyebrow">Progress over time</span>
+                <h2>From small web projects to larger game systems.</h2>
+            </div>
+            <div class="growth-timeline">
+                <div><span>01</span><strong>HTML + CSS</strong><p>Started with layouts, responsive pages, and interface design.</p></div>
+                <div><span>02</span><strong>JavaScript + PHP</strong><p>Added interaction, game logic, dynamic behavior, and database-backed projects.</p></div>
+                <div><span>03</span><strong>Unity + C#</strong><p>Moved into larger game architecture, reusable systems, 3D scenes, controller support, and deeper gameplay.</p></div>
+                <div><span>04</span><strong>Real projects</strong><p>Now building a commercial-scale deckbuilder and testing web work with real local-business outreach.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>River Hine</strong>
+            <span>Game development • Web development • UI/UX</span>
         </div>
-<section class="container">
-<h2>Projects</h2>
+        <a href="mailto:river.hine1@gmail.com">river.hine1@gmail.com</a>
+    </footer>
 
-<div class="slider-wrapper">
-
-    <button class="arrow left">&#10094;</button>
-
-    <div class="project-slider">
-        <div class="slides">
-
-            <!-- PROJECT 1 -->
-            <div class="slide active">
-                <h3>Snake Game (HTML, CSS, JavaScript)</h3>
-
-                <button class="fullscreen-btn">⛶</button>
-
-                <div class="iframe-container">
-                    <iframe src="Projects/mygame/index.html"></iframe>
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" type="button" data-close-modal aria-label="Close project details">×</button>
+            <div class="modal-media" id="modalMedia"></div>
+            <div class="modal-info">
+                <div class="modal-heading-row">
+                    <div>
+                        <span class="project-type" id="modalType"></span>
+                        <h2 id="modalTitle"></h2>
+                    </div>
+                    <span class="modal-status" id="modalStatus"></span>
                 </div>
+                <p id="modalDescription"></p>
+                <div class="modal-details" id="modalDetails"></div>
+                <div class="modal-actions" id="modalActions"></div>
             </div>
-
-            <!-- PROJECT 2 -->
-            <div class="slide">
-                <h3>Arc Raiders UX/UI  (HTML and CSS)</h3>
-
-                <button class="fullscreen-btn">⛶</button>    
-
-                <div class="iframe-container">
-                    <iframe src="Projects/mygame2/index.html"></iframe>
-                </div>
-            </div>
-
-            <!-- PROJECT 3 -->
-            <div class="slide">
-                <h3>Arc Raider Database (PHP, HTML, and CSS)</h3>
-
-                <button class="fullscreen-btn">⛶</button>
-
-                <div class="iframe-container">
-                    <iframe src="https://hiner2027.smtchs.org/testdb/DBArc.php?search=&search_column=weapon_name"></iframe>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <button class="arrow right">&#10095;</button>
-
-</div>
-</section>
-     
-<div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-        <span class="close">&times;</span>
-        <div class="lightbox-frame">
-            
-        </div>
-    </div>
-</div>
-
-</main>
-
-    <div class="floating-bg">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-
-<footer>
-    <p>&copy; 2025 RiverH Portfolio. All rights reserved.  riverh.2027@mtchs.org.</p>
-</footer>
-
-   
-
-    <script src="script.js">
-        
-    </script>
-</div>
+    <script src="work-samples.js"></script>
 </body>
-
-
 </html>
