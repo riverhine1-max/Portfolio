@@ -1,4 +1,80 @@
 const projects = {
+"shinkage": {
+    "title": "Shinkage",
+    "type": "Unity • C# • Higgsfield • AI",
+    "status": "Experiment · Unfinished integration",
+    "description": "A small Unity experiment in AI-assisted character creation and animation. I tested connecting Higgsfield to ChatGPT through a plugin and bringing a samurai swordsman into a training courtyard.",
+    "details": [
+        [
+            "What I tested",
+            "The plugin connection, a 3D samurai character workflow, and basic walking and jumping animations in Unity."
+        ],
+        [
+            "What I learned",
+            "Troubleshooting the connection improved the character model. I learned to check the tool connection and test generated assets in-engine before building more around them."
+        ],
+        [
+            "Current limits",
+            "The integration is not fully completed. Walking and jumping are the only animations currently implemented; this is a learning experiment, not a finished game."
+        ]
+    ],
+    "media": [
+        {
+            "type": "image",
+            "src": "Images/portfolio-projects/shinkage-courtyard.webp",
+            "thumbnail": "Images/optimized/shinkage-courtyard-thumb.webp",
+            "alt": "Shinkage — samurai in the training courtyard"
+        },
+        {
+            "type": "video",
+            "src": "Media/shinkage-prototype.mp4",
+            "poster": "Images/portfolio-projects/shinkage-prototype-poster.webp",
+            "alt": "Shinkage · Movement experiment"
+        },
+        {
+            "type": "image",
+            "src": "Images/portfolio-projects/shinkage-pause.webp",
+            "thumbnail": "Images/optimized/shinkage-pause-thumb.webp",
+            "alt": "Shinkage — pause menu and training layout"
+        }
+    ],
+    "links": []
+},
+"exploding-nuts-soulslike": {
+    "title": "Exploding Nuts — Soulslike Experiment",
+    "type": "Unity • C# • Environment Design",
+    "status": "Learning prototype · Unfinished",
+    "description": "An unfinished Soulslike Unity prototype focused on terrain building, environment design, level layout, lighting, and 3D world-building.",
+    "details": [
+        [
+            "What I explored",
+            "Shaping terrain, arranging routes and spaces, placing environment elements, and testing the world from a player’s viewpoint."
+        ],
+        [
+            "What I learned",
+            "Using a playable scene to judge scale, navigation, and lighting, then revising the environment through iteration."
+        ],
+        [
+            "Work in progress",
+            "Some terrain uses AI-generated content and remains rough while I learn the workflow. This prototype documents that learning process; it is not a finished game."
+        ]
+    ],
+    "media": [
+        {
+            "type": "image",
+            "src": "Images/portfolio-projects/soulslike-terrain.webp",
+            "thumbnail": "Images/optimized/soulslike-terrain-thumb.webp",
+            "alt": "Soulslike prototype — terrain and level layout in Unity"
+        },
+        {
+            "type": "video",
+            "src": "Media/exploding-nuts-soulslike-prototype.mp4",
+            "poster": "Images/portfolio-projects/exploding-nuts-soulslike-prototype-poster.webp",
+            "alt": "Soulslike experiment · Early environment walkthrough"
+        }
+    ],
+    "links": []
+},
     "gilded-fate": {
         title: "Gilded Fate",
         type: "Unity • C# • Roguelike Deckbuilder",
@@ -10,108 +86,120 @@ const projects = {
             ["Development approach", "AI-assisted iteration and debugging with human direction, testing, design decisions, and final integration"]
         ],
         media: [
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-title-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-title-20260916-thumb.webp",
-                        "alt": "Title screen"
-            },
-            {
-                        "type": "video",
-                        "src": "Media/gilded-fate-gameplay.mp4",
-                        "poster": "Images/portfolio-projects/gilded-fate-gameplay-poster.webp",
-                        "alt": "Unity / C# · Gilded Fate gameplay"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-vanguard-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-vanguard-20260916-thumb.webp",
-                        "alt": "The Vanguard — character archive"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-hexer-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-hexer-20260916-thumb.webp",
-                        "alt": "The Hexer — character archive"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-reaper-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-reaper-20260916-thumb.webp",
-                        "alt": "The Reaper — character archive"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-fateweave-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-fateweave-20260916-thumb.webp",
-                        "alt": "The Fateweave — starting choices"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-map-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-map-20260916-thumb.webp",
-                        "alt": "Branching map and Vault rooms"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-hexer-combat-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-hexer-combat-20260916-thumb.webp",
-                        "alt": "Hexer combat — Hex Strike"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-sigils-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-sigils-20260916-thumb.webp",
-                        "alt": "Choose a Sigil"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-hexer-status-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-hexer-status-20260916-thumb.webp",
-                        "alt": "Hexer — Ember and status details"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-reaper-combat-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-reaper-combat-20260916-thumb.webp",
-                        "alt": "Reaper combat — Reaping Blow"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-soul-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-soul-20260916-thumb.webp",
-                        "alt": "Reaper combat — Soul card"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-victory-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-victory-20260916-thumb.webp",
-                        "alt": "Victory and card rewards"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-event-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-event-20260916-thumb.webp",
-                        "alt": "The Fallen Banner — event choices"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-sanctuary-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-sanctuary-20260916-thumb.webp",
-                        "alt": "Sanctuary — rest, upgrade, or bind"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-binding-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-binding-20260916-thumb.webp",
-                        "alt": "Choose a Binding"
-            },
-            {
-                        "type": "image",
-                        "src": "Images/portfolio-projects/gilded-fate-shop-20260916.webp",
-                        "thumbnail": "Images/optimized/gilded-fate-shop-20260916-thumb.webp",
-                        "alt": "The Thread Broker — shop"
-            }
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-title-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-title-20260916-thumb.webp",
+                    "alt": "Title screen"
+          },
+          {
+                    "type": "video",
+                    "src": "Media/gilded-fate-gameplay.mp4",
+                    "poster": "Images/portfolio-projects/gilded-fate-gameplay-poster.webp",
+                    "alt": "Unity / C# · Gilded Fate gameplay"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-vanguard-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-vanguard-20260916-thumb.webp",
+                    "alt": "The Vanguard — character archive"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-hexer-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-hexer-20260916-thumb.webp",
+                    "alt": "The Hexer — character archive"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-reaper-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-reaper-20260916-thumb.webp",
+                    "alt": "The Reaper — character archive"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-fateweave-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-fateweave-20260916-thumb.webp",
+                    "alt": "The Fateweave — starting choices"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-map-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-map-20260916-thumb.webp",
+                    "alt": "Branching map and Vault rooms"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-hexer-combat-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-hexer-combat-20260916-thumb.webp",
+                    "alt": "Hexer combat — Hex Strike"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-sigils-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-sigils-20260916-thumb.webp",
+                    "alt": "Choose a Sigil"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-hexer-status-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-hexer-status-20260916-thumb.webp",
+                    "alt": "Hexer — Ember and status details"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-reaper-portrait.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-reaper-portrait-thumb.webp",
+                    "alt": "Reaper — character detail"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-vanguard-portrait.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-vanguard-portrait-thumb.webp",
+                    "alt": "Vanguard — character detail"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-reaper-combat-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-reaper-combat-20260916-thumb.webp",
+                    "alt": "Reaper combat — Reaping Blow"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-soul-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-soul-20260916-thumb.webp",
+                    "alt": "Reaper combat — Soul card"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-victory-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-victory-20260916-thumb.webp",
+                    "alt": "Victory and card rewards"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-event-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-event-20260916-thumb.webp",
+                    "alt": "The Fallen Banner — event choices"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-sanctuary-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-sanctuary-20260916-thumb.webp",
+                    "alt": "Sanctuary — rest, upgrade, or bind"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-binding-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-binding-20260916-thumb.webp",
+                    "alt": "Choose a Binding"
+          },
+          {
+                    "type": "image",
+                    "src": "Images/portfolio-projects/gilded-fate-shop-20260916.webp",
+                    "thumbnail": "Images/optimized/gilded-fate-shop-20260916-thumb.webp",
+                    "alt": "The Thread Broker — shop"
+          }
 ],
         links: [
             ["View GitHub repository", "https://github.com/riverhine1-max/gilded-fate", true]
@@ -423,6 +511,12 @@ function closeModal() {
     if (modal.open) modal.close();
     cleanupModal();
 }
+// Frame navigation can briefly return focus to the document body.
+function restoreDialogFocus() {
+    if (modal.open && !modal.contains(document.activeElement)) closeButton.focus({ preventScroll: true });
+}
+document.addEventListener('focusin', restoreDialogFocus);
+modal.addEventListener('focusout', () => setTimeout(restoreDialogFocus, 0));
 closeButton.addEventListener('click', closeModal);
 modal.addEventListener('cancel', event => { event.preventDefault(); closeModal(); });
 modal.addEventListener('close', () => {
@@ -479,6 +573,7 @@ const viewButtons = document.querySelectorAll('[data-project-view]');
 function setProjectView(view) {
     const timeline = view === 'timeline';
     document.getElementById('projectGallery').hidden = timeline;
+    document.getElementById('experiments').hidden = timeline;
     document.getElementById('projectTimeline').hidden = !timeline;
     viewButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.projectView === view)));
     const url = new URL(location.href);

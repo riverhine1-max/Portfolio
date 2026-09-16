@@ -4,7 +4,7 @@ require('node:fs').mkdirSync(output, { recursive: true });
 const fs = require('fs');
 const { chromium } = require('playwright');
 const sizes = [[2560,1080],[1920,1080],[1440,900],[1366,768],[1024,768],[768,1024],[430,932],[390,844],[360,800]];
-const ids = ['gilded-fate','exploding-nuts','website-demos','arc-ui','snake','arc-db'];
+const ids = ['gilded-fate','exploding-nuts','website-demos','arc-ui','snake','arc-db','shinkage','exploding-nuts-soulslike'];
 const assert = (ok, msg) => { if (!ok) throw Error(msg); };
 (async () => {
  const browser = await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL || 'msedge',headless:true});
@@ -41,7 +41,7 @@ const assert = (ok, msg) => { if (!ok) throw Error(msg); };
    await card.click(); await page.mouse.click(2,2); assert(!await dialog.evaluate(e=>e.open),'backdrop close');
    report.push({width,height,id,shell:[rect.width,rect.height],stage:[stageRect.width,stageRect.height],gallery:count});
   }
-  console.log(width+'x'+height+' all six PASS');
+  console.log(width+'x'+height+' all eight PASS');
  }
  assert(errors.length===0,JSON.stringify(errors));fs.writeFileSync(path.join(output,'modal-qa.json'),JSON.stringify(report,null,2));await browser.close();
 })();
