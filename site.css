@@ -73,16 +73,10 @@ img { max-width: 100%; }
     text-decoration: none;
 }
 .brand-mark {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    font-weight: 900;
-    letter-spacing: -.04em;
-    color: #08121d;
-    background: linear-gradient(135deg, var(--blue-2), #cde9ff);
-    box-shadow: 0 8px 30px rgba(88, 166, 255, .22);
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
 }
 .brand strong, .brand small { display: block; }
 .brand strong { font-size: .98rem; }
