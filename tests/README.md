@@ -25,3 +25,5 @@ Project data lives at the top of work-samples.js. Existing images arrays use the
 The shell and stage dimensions are shared for images, video, and embedded projects. Database content is a screenshot case study. Its action opens the styled, read-only explorer at Project/arc-database/index.html. The explorer searches a 77-record snapshot from the school database captured on September 15, 2026. It does not synchronize with or modify the PHP backend. GitHub Pages does not execute PHP.
 
 site.css is the active shared stylesheet. work-samples.css only imports it for compatibility. Legacy ARC Raiders assets are preserved.
+
+Run node tests/project-media.cjs to verify the 25 supplied screenshots, Gilded Fate title-first order, and playback, seeking, and unloading of all three real recordings. Set TEST_URL to check the deployed site. Media entries support thumbnail for lightweight gallery previews. The named picker and scrollable thumbnail strip handle larger collections.

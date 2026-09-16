@@ -9,11 +9,110 @@ const projects = {
             ["Tech", "Unity, C#, Git/GitHub, custom game systems"],
             ["Development approach", "AI-assisted iteration and debugging with human direction, testing, design decisions, and final integration"]
         ],
-        images: [
-            "Images/portfolio-projects/gilded-fate-combat.webp",
-            "Images/portfolio-projects/gilded-fate-menu.webp",
-            "Images/portfolio-projects/gilded-fate-collection.webp"
-        ],
+        media: [
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-title-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-title-20260916-thumb.webp",
+                        "alt": "Title screen"
+            },
+            {
+                        "type": "video",
+                        "src": "Media/gilded-fate-gameplay.mp4",
+                        "poster": "Images/portfolio-projects/gilded-fate-gameplay-poster.webp",
+                        "alt": "Unity / C# · Gilded Fate gameplay"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-vanguard-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-vanguard-20260916-thumb.webp",
+                        "alt": "The Vanguard — character archive"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-hexer-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-hexer-20260916-thumb.webp",
+                        "alt": "The Hexer — character archive"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-reaper-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-reaper-20260916-thumb.webp",
+                        "alt": "The Reaper — character archive"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-fateweave-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-fateweave-20260916-thumb.webp",
+                        "alt": "The Fateweave — starting choices"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-map-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-map-20260916-thumb.webp",
+                        "alt": "Branching map and Vault rooms"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-hexer-combat-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-hexer-combat-20260916-thumb.webp",
+                        "alt": "Hexer combat — Hex Strike"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-sigils-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-sigils-20260916-thumb.webp",
+                        "alt": "Choose a Sigil"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-hexer-status-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-hexer-status-20260916-thumb.webp",
+                        "alt": "Hexer — Ember and status details"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-reaper-combat-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-reaper-combat-20260916-thumb.webp",
+                        "alt": "Reaper combat — Reaping Blow"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-soul-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-soul-20260916-thumb.webp",
+                        "alt": "Reaper combat — Soul card"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-victory-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-victory-20260916-thumb.webp",
+                        "alt": "Victory and card rewards"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-event-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-event-20260916-thumb.webp",
+                        "alt": "The Fallen Banner — event choices"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-sanctuary-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-sanctuary-20260916-thumb.webp",
+                        "alt": "Sanctuary — rest, upgrade, or bind"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-binding-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-binding-20260916-thumb.webp",
+                        "alt": "Choose a Binding"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/gilded-fate-shop-20260916.webp",
+                        "thumbnail": "Images/optimized/gilded-fate-shop-20260916-thumb.webp",
+                        "alt": "The Thread Broker — shop"
+            }
+],
         links: [
             ["View GitHub repository", "https://github.com/riverhine1-max/gilded-fate", true]
         ]
@@ -25,15 +124,78 @@ const projects = {
         description: "A stylized arena roguelite that shows the progression of my game-development skills. The project started with HTML, CSS, and JavaScript, then expanded into Unity and C# as I learned to build larger systems and 3D gameplay.",
         details: [
             ["What I built", "Menus, progression, fighters, weapon systems, lore, achievements, 3D gameplay experiments"],
-            ["Tech progression", "HTML/CSS/JavaScript → Unity/C#"],
+            ["Then · Web prototype", "I started in HTML, CSS, and JavaScript, building the fighter and arena selection flow, difficulty settings, run modifiers, collections, and relic armory. The Web-labeled screenshots and recording show that browser version."],
+            ["Now · Unity / C#", "I carried the concept into Unity and C#, developing the standalone game, its 3D gameplay, controller-ready menus, and a live weapon assembly preview. The Unity-labeled screenshots and recording show this later stage."],
             ["Why it matters", "This project pushed me from smaller web interactions into larger game architecture and iteration"]
         ],
-        images: [
-            "Images/portfolio-projects/exploding-nuts-home.webp",
-            "Images/portfolio-projects/exploding-nuts-gameplay.webp",
-            "Images/portfolio-projects/exploding-nuts-armory.webp",
-            "Images/portfolio-projects/exploding-nuts-unity.webp"
-        ],
+        media: [
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-armory-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-armory-20260916-thumb.webp",
+                        "alt": "Web · Sap Relic Armory"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-characters-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-characters-20260916-thumb.webp",
+                        "alt": "Web · Character collection"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-arenas-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-arenas-20260916-thumb.webp",
+                        "alt": "Web · Arena collection"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-fighter-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-fighter-20260916-thumb.webp",
+                        "alt": "Web · Choose your fighter"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-arena-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-arena-20260916-thumb.webp",
+                        "alt": "Web · Choose your arena"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-difficulty-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-difficulty-20260916-thumb.webp",
+                        "alt": "Web · Choose your difficulty"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-web-modifier-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-web-modifier-20260916-thumb.webp",
+                        "alt": "Web · Choose a run modifier"
+            },
+            {
+                        "type": "video",
+                        "src": "Media/exploding-nuts-web-gameplay.mp4",
+                        "poster": "Images/portfolio-projects/exploding-nuts-web-gameplay-poster.webp",
+                        "alt": "Web · Browser gameplay"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-unity-title-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-unity-title-20260916-thumb.webp",
+                        "alt": "Unity / C# · The Living Deep — main menu"
+            },
+            {
+                        "type": "image",
+                        "src": "Images/portfolio-projects/exploding-nuts-unity-assembly-20260916.webp",
+                        "thumbnail": "Images/optimized/exploding-nuts-unity-assembly-20260916-thumb.webp",
+                        "alt": "Unity / C# · Live 3D weapon assembly"
+            },
+            {
+                        "type": "video",
+                        "src": "Media/exploding-nuts-unity-gameplay.mp4",
+                        "poster": "Images/portfolio-projects/exploding-nuts-unity-gameplay-poster.webp",
+                        "alt": "Unity / C# · Gameplay"
+            }
+],
         links: [
             ["View GitHub repository", "https://github.com/riverhine1-max/Exploding-Nuts", true]
         ]
@@ -143,6 +305,13 @@ function showGalleryItem(index) {
     stage.replaceChildren(media);
     modalMedia.querySelector('.gallery-counter').textContent = `${galleryIndex + 1} / ${galleryItems.length}`;
     modalMedia.querySelectorAll('.gallery-thumb').forEach((button, i) => button.setAttribute('aria-pressed', String(i === galleryIndex)));
+    const selected = modalMedia.querySelector('.gallery-thumb[aria-pressed="true"]');
+    if (selected) {
+        const strip = selected.parentElement;
+        strip.scrollLeft = selected.offsetLeft - strip.offsetLeft - (strip.clientWidth - selected.clientWidth) / 2;
+    }
+    const picker = modalMedia.querySelector('.gallery-picker');
+    if (picker) picker.value = String(galleryIndex);
 }
 
 function renderMedia(project) {
@@ -158,17 +327,30 @@ function renderMedia(project) {
             previous.type = 'button'; previous.setAttribute('aria-label', 'Previous media');
             previous.addEventListener('click', () => showGalleryItem(galleryIndex - 1));
             const thumbs = element('div', 'gallery-thumbs');
+            thumbs.setAttribute('aria-label', 'Project media thumbnails');
+            const picker = element('select', 'gallery-picker');
+            picker.setAttribute('aria-label', 'Choose screenshot or video');
+            galleryItems.forEach((item, i) => {
+                const option = element('option', '', `${i + 1}. ${item.type === 'video' ? '▶ Video · ' : ''}${item.alt}`);
+                option.value = String(i); picker.append(option);
+            });
+            picker.addEventListener('change', () => showGalleryItem(Number(picker.value)));
+            controls.classList.add('has-gallery');
+            controls.append(picker);
             galleryItems.forEach((item, i) => {
                 const button = element('button', 'gallery-thumb');
                 button.type = 'button';
+                button.title = item.alt;
                 button.setAttribute('aria-label', `Show ${item.type === 'video' ? 'video' : 'screenshot'} ${i + 1}`);
                 const thumb = element('img');
-                thumb.src = item.poster || (item.src.startsWith('Images/portfolio-projects/')
+                thumb.loading = 'lazy';
+                thumb.src = item.thumbnail || item.poster || (item.src.startsWith('Images/portfolio-projects/')
                     ? item.src.replace('Images/portfolio-projects/', 'Images/optimized/').replace('.webp', '-800.webp')
                     : item.src);
                 thumb.alt = '';
                 if (item.type !== 'video' || item.poster) button.append(thumb);
                 else button.textContent = '▶';
+                if (item.type === 'video' && item.poster) button.append(element('span', 'gallery-play', '▶'));
                 button.addEventListener('click', () => showGalleryItem(i));
                 thumbs.append(button);
             });
@@ -256,7 +438,7 @@ modal.addEventListener('pointerdown', event => { pointerStartedOutside = outside
 modal.addEventListener('click', event => { if (pointerStartedOutside && outside(event)) closeModal(); });
 modal.addEventListener('keydown', event => {
     if (event.key === 'Tab') {
-        const items = [...modal.querySelectorAll('button, a[href], iframe, video[controls], [tabindex="0"]')]
+        const items = [...modal.querySelectorAll('button, select, a[href], iframe, video[controls], [tabindex="0"]')]
             .filter(item => !item.disabled && item.getClientRects().length);
         const first = items[0], last = items[items.length - 1];
         if (event.shiftKey && document.activeElement === first) {
@@ -265,7 +447,7 @@ modal.addEventListener('keydown', event => {
             event.preventDefault(); first.focus();
         }
     }
-    if (galleryItems.length > 1 && !event.target.closest('video') && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+    if (galleryItems.length > 1 && !event.target.closest('video, select') && ['ArrowLeft', 'ArrowRight'].includes(event.key)) {
         event.preventDefault(); showGalleryItem(galleryIndex + (event.key === 'ArrowRight' ? 1 : -1));
     }
 });
