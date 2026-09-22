@@ -15,13 +15,13 @@ The original page names, gallery hash links, `Project/` demos, and legacy ARC as
 
 ## Design and behavior
 
-`site.css` retains the tested gallery/dialog geometry. `redesign.css` defines case-study layouts. `motion.css` and `motion.js` provide the cinematic identity, pointer depth, scroll reveals, project selector, and sticky walkthrough. `navigation.js` adds mobile disclosure navigation while keeping links usable without JavaScript. `interactions.js` handles the dedicated Gilded Fate systems explorer. No framework, build step, external fonts, or animation library is required.
+`site.css` retains the tested gallery/dialog geometry. `redesign.css` defines case-study layouts. `motion.css` and `motion.js` provide the cinematic identity, pointer depth, scroll reveals, project selector, and sticky walkthrough. `navigation.js` adds mobile disclosure navigation while keeping links usable without JavaScript. `interactions.js` handles the dedicated Gilded Fate systems explorer. `smooth-scroll.js` eases discrete mouse-wheel steps while preserving native trackpad/touch input, nested scrollers, keyboard input, and reduced-motion preferences. No framework, build step, external fonts, or animation library is required.
 
 Project descriptions and resume facts come from existing repository content. Website redesigns are independent concepts, not commissioned-client claims. Gilded Fate and the prototypes remain explicitly in development.
 
 ## Media
 
-Existing gameplay and screenshots remain the project evidence. Higgsfield concept artwork and animation supply the full-screen atmosphere and are labeled as not gameplay. The muted hero film has a persistent play/pause control and pauses offscreen or when the page is hidden. Reduced-motion and data-saving preferences disable automatic video loading. Users can explicitly play the film if desired. Project media uses the original screenshots, without fabricated gameplay or outcomes.
+Existing gameplay and screenshots remain the project evidence. Higgsfield concept artwork and animation supply the full-screen atmosphere and are labeled as not gameplay. The muted hero film automatically plays in a loop, without an activation button, and pauses offscreen or when the page is hidden. Reduced-motion and data-saving preferences disable automatic video loading. If autoplay is blocked, the artwork remains visible. Project media uses the original screenshots, without fabricated gameplay or outcomes.
 
 Generation provenance: image `63fb267a-763f-4cbb-82e8-8a7b20f407ea` (GPT Image 2.5); animation `29518861-35b0-4f36-bd8d-1847a4fcd891` (Kling 3.0 Turbo).
 
