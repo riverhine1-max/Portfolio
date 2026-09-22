@@ -8,13 +8,13 @@ const ids = ['gilded-fate','exploding-nuts','website-demos','arc-ui','snake','ar
 const assert = (ok, msg) => { if (!ok) throw Error(msg); };
 (async () => {
  const browser = await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL || 'msedge',headless:true});
- const page = await browser.newPage(); const errors=[]; page.on('pageerror',e=>errors.push(e.message));
+ const page = await browser.newPage(); const errors=[]; page.on('pageerror',e=>errors.push(e.message)); page.on('response',r=>{if(r.status()>=400)console.log('HTTP',r.status(),r.url())});
  const base=process.env.TEST_URL || 'http://127.0.0.1:8123/'; const report=[];
  for (const [width,height] of sizes) {
   await page.setViewportSize({width,height}); await page.goto(base+'WorkSample.html',{waitUntil:'domcontentloaded'});
   let reference;
   for (const id of ids) {
-   const card=page.locator(`[data-project="${id}"]`); await card.click();
+   const card=page.locator(`[data-project="${id}"], [data-gallery-project="${id}"]`); await card.click();
    const dialog=page.locator('#projectModal'); assert(await dialog.evaluate(e=>e.open),'not open');
    const rect=await dialog.boundingBox();
    assert(rect.width<=1800.5 && rect.x>=0 && rect.y>=0 && rect.x+rect.width<=width+.5 && rect.y+rect.height<=height+.5,`${width} ${id} outside viewport ${JSON.stringify(rect)}`);
@@ -23,7 +23,7 @@ const assert = (ok, msg) => { if (!ok) throw Error(msg); };
    assert(await dialog.evaluate(e=>e.scrollWidth<=e.clientWidth+1),`${id} dialog overflow`);
    assert(await page.locator('.project-modal__content').evaluate(e=>e.scrollWidth<=e.clientWidth+1),`${id} content overflow`);
    const gallery=page.locator('.gallery-thumb'); const count=await gallery.count();
-   for(let i=0;i<count;i++) { await gallery.nth(i).click();if(await stage.locator('video').count()) await stage.locator('video').evaluate(e=>new Promise((resolve,reject)=>{if(e.readyState>=1)return resolve();e.onloadedmetadata=resolve;e.onerror=reject;})); else await stage.locator('img').evaluate(e=>e.decode());const r=await dialog.boundingBox(),v=await stage.boundingBox();assert(Math.abs(r.height-rect.height)<.5&&Math.abs(v.height-stageRect.height)<.5&&Math.abs(v.width-stageRect.width)<.5,'gallery shift');assert(await stage.locator('img,video').evaluate(e=>getComputedStyle(e).objectFit==='contain'&&(e.naturalWidth||e.videoWidth)>0),'image containment'); }
+   for(let i=0;i<count;i++) { await gallery.nth(i).click();if(await stage.locator('video').count()) await stage.locator('video').evaluate(e=>new Promise((resolve,reject)=>{if(e.readyState>=1)return resolve();e.onloadedmetadata=resolve;e.onerror=reject;})); else await stage.locator('img').evaluate(e=>e.decode().catch(()=>{throw Error('Cannot decode '+e.src)}));const r=await dialog.boundingBox(),v=await stage.boundingBox();assert(Math.abs(r.height-rect.height)<.5&&Math.abs(v.height-stageRect.height)<.5&&Math.abs(v.width-stageRect.width)<.5,'gallery shift');assert(await stage.locator('img,video').evaluate(e=>getComputedStyle(e).objectFit==='contain'&&(e.naturalWidth||e.videoWidth)>0),'image containment'); }
    if(count){await page.getByRole('button',{name:'Next media',exact:true}).click();assert(await page.locator('.gallery-counter').textContent()===`1 / ${count}`,'next wrap');await page.getByRole('button',{name:'Previous media',exact:true}).click();assert(await page.locator('.gallery-counter').textContent()===`${count} / ${count}`,'previous wrap');}
    if(id==='arc-db') assert(await stage.locator('iframe').count()===0,'database raw iframe');
    if(id==='snake'){

@@ -8,8 +8,11 @@ Serve the repository with a static web server at http://127.0.0.1:8123/ (or set 
     node tests/featured-work-interactions.cjs
     node tests/snake.cjs
     node tests/portfolio-content.cjs
+    node tests/redesign.cjs
 
-Screenshots and the 72-case layout report go to test-results/ (override with QA_OUTPUT). The interaction check uses the public MDN CC0 flower video as a temporary playback fixture; it does not add that video to the portfolio.
+Screenshots and the 72-case layout report go to test-results/ (override with QA_OUTPUT). The interaction check uses the existing local Gilded Fate gameplay recording as its playback fixture.
+
+The redesign check covers nine pages at five desktop/tablet/mobile widths, local links, image loading, HTML resume content, public-contact privacy, keyboard/touch systems selection, mobile menu focus, reduced motion, and navigation without JavaScript. Featured projects now have separate case-study links and gallery buttons; the existing gallery regression suite exercises those buttons. Card heights intentionally follow the new project hierarchy.
 
 The matrix tests all six projects at 2560×1080, 1920×1080, 1440×900, 1366×768, 1024×768, 768×1024, 430×932, 390×844, and 360×800. It checks stable shell dimensions, image containment, every gallery item, wrapping gallery controls, focus return, Escape, backdrop dismissal, overflow, and embedded Snake sizing. Additional tests cover focus cycling, scroll locking, video playback, deep links, reduced motion, game input, game-over, replay, and resizing.
 

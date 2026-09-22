@@ -471,7 +471,7 @@ function renderMedia(project) {
 function openProject(projectId, trigger) {
     const project = projects[projectId];
     if (!project) return;
-    previousFocus = trigger || document.querySelector(`[data-project="${projectId}"]`) || document.activeElement;
+    previousFocus = trigger || document.querySelector(`[data-project="${projectId}"], [data-gallery-project="${projectId}"]`) || document.activeElement;
     activeProject = projectId;
     modalTitle.textContent = project.title;
     document.getElementById('modalType').textContent = project.type;
@@ -545,7 +545,7 @@ modal.addEventListener('keydown', event => {
         event.preventDefault(); showGalleryItem(galleryIndex + (event.key === 'ArrowRight' ? 1 : -1));
     }
 });
-document.querySelectorAll('.project-card').forEach(card => {
+document.querySelectorAll('.project-card[data-project]').forEach(card => {
     card.setAttribute('aria-haspopup', 'dialog');
     card.addEventListener('click', () => openProject(card.dataset.project, card));
     card.addEventListener('keydown', event => {
@@ -582,3 +582,6 @@ function setProjectView(view) {
 }
 viewButtons.forEach(button => button.addEventListener('click', () => setProjectView(button.dataset.projectView)));
 if (new URLSearchParams(location.search).get('view') === 'timeline') setProjectView('timeline');
+
+// Featured projects have real case-study links and a separate gallery action.
+document.querySelectorAll('[data-gallery-project]').forEach(button => button.addEventListener('click', () => openProject(button.dataset.galleryProject, button)));
