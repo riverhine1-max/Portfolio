@@ -21,7 +21,7 @@
   const steps=[...document.querySelectorAll('[data-journey]')];
   let manualUntil=0;
   function step(b){steps.forEach(s=>s.setAttribute('aria-pressed',String(s===b)));const img=document.getElementById('journey-image');const src='Images/portfolio-projects/gilded-fate-'+b.dataset.journey+'-20260916.webp';if(img.getAttribute('src')!==src)img.src=src;img.alt=b.querySelector('strong').textContent+' — actual Gilded Fate screen'}
-  steps.forEach(b=>b.addEventListener('click',()=>{manualUntil=performance.now()+1500;step(b)}));
+  steps.forEach(b=>b.addEventListener('click',()=>{manualUntil=performance.now()+1500;step(b);if(innerWidth<=760)document.querySelector('.journey-stage').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'center'})}));
   if('IntersectionObserver' in window){const story=new IntersectionObserver(entries=>{if(innerWidth<=760||reduced.matches||performance.now()<manualUntil)return;for(const e of entries)if(e.isIntersecting)step(e.target)},{rootMargin:'-35% 0px -35% 0px',threshold:0});steps.forEach(b=>story.observe(b))}
   const hero=document.querySelector('.motion-hero'),film=document.getElementById('world-film'),control=document.querySelector('.world-motion');
   let enabled=!reduced.matches&&!navigator.connection?.saveData,visible=true;
