@@ -61,6 +61,7 @@ const assert = (value, message) => { if (!value) throw new Error(message); };
   await page.goto(base+'WorkSample.html');
   await page.locator('[data-featured-project="gilded-fate"] a').focus();
   await page.keyboard.press('Enter');
+  await page.waitForURL('**/GildedFate.html');
   assert(page.url().endsWith('GildedFate.html'),'case-study link keyboard activation');
   const touch=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   const touchPage=await touch.newPage();await touchPage.goto(base+'GildedFate.html');
