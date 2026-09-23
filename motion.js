@@ -28,19 +28,18 @@
   }
   function select(button){const [title,meta,copy,img,url]=projects[button.dataset.showcase];tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.getElementById('showcase-title').textContent=title;document.getElementById('showcase-meta').textContent=meta;document.getElementById('showcase-copy').textContent=copy;const image=document.getElementById('showcase-image');swapImage(image,img,title+' — actual project screenshot');for(const id of ['showcase-link','showcase-detail']){const a=document.getElementById(id);a.href=url;a.setAttribute('aria-label','Explore '+title+' case study')}}
   tabs.forEach((b,i)=>{b.addEventListener('click',()=>select(b));b.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;e.preventDefault();const n=e.key==='Home'?0:e.key==='End'?tabs.length-1:(i+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[n].focus();select(tabs[n])})});
-  const steps=[...document.querySelectorAll('[data-journey]')];
-  let manualUntil=0;
-  function step(b){steps.forEach(s=>s.setAttribute('aria-pressed',String(s===b)));const img=document.getElementById('journey-image');const src='Images/portfolio-projects/gilded-fate-'+b.dataset.journey+'-20260916.webp';swapImage(img,src,b.querySelector('strong').textContent+' — actual Gilded Fate screen')}
-  steps.forEach(b=>b.addEventListener('click',()=>{manualUntil=performance.now()+1500;step(b);if(innerWidth<=760)document.querySelector('.journey-stage').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'center'})}));
-  if('IntersectionObserver' in window){const story=new IntersectionObserver(entries=>{if(innerWidth<=760||reduced.matches||performance.now()<manualUntil)return;for(const e of entries)if(e.isIntersecting)step(e.target)},{rootMargin:'-35% 0px -35% 0px',threshold:0});steps.forEach(b=>story.observe(b))}
   const hero=document.querySelector('.motion-hero'),film=document.getElementById('world-film');
+  let userPaused=false;
   let enabled=!reduced.matches&&!navigator.connection?.saveData,visible=true;
   film.muted=true;film.loop=true;
   function pause(){film.pause()}
-  async function play(){if(!visible||document.hidden||!enabled)return;if(!film.getAttribute('src'))film.src=film.dataset.src;try{await film.play();if(!visible||document.hidden||!enabled)pause()}catch{/* The poster remains visible if the browser blocks autoplay. */}}
+  async function play(){if(!visible||document.hidden||!enabled||userPaused)return;if(!film.getAttribute('src'))film.src=film.dataset.src;try{await film.play();if(!visible||document.hidden||!enabled)pause()}catch{/* The poster remains visible if the browser blocks autoplay. */}}
   if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible&&enabled)play();else pause()},{threshold:.05}).observe(hero);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();else if(enabled)play()});
   reduced.addEventListener('change',()=>{enabled=!reduced.matches&&!navigator.connection?.saveData;updateScroll();if(enabled)play();else pause()});
+  const toggle=document.getElementById('hero-play');
+  toggle.textContent=enabled?'Pause film':'Play film';
+  toggle.addEventListener('click',()=>{userPaused=!film.paused;if(userPaused)pause();else {enabled=true;play()}toggle.textContent=userPaused?'Play film':'Pause film'});
   if(enabled)play();
   hero.addEventListener('pointermove',event=>{if(reduced.matches||event.pointerType!=='mouse')return;const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',((event.clientX-r.left)/r.width-.5)*-16+'px');hero.style.setProperty('--my',((event.clientY-r.top)/r.height-.5)*-12+'px')},{passive:true});
   hero.addEventListener('pointerleave',()=>{hero.style.setProperty('--mx','0px');hero.style.setProperty('--my','0px')});
