@@ -40,3 +40,6 @@ test('reduced motion keeps native scrolling and does not load animation',()=>{
 test('manual state selection pauses autoplay and remains keyboard-addressable',()=>{
  const h=setup();h.wheel();h.steps[2].fire('click');h.ready();h.tick(15000);assert.equal(h.count(),'03 / 05');assert.equal(h.nodes['run-play'].textContent,'Play');
 });
+test('a native scroll jump across the entire section still enters state one',()=>{
+ const h=setup();h.context.scrollY=3000;h.globalEvents.scroll();assert.equal(h.story.classList.contains('is-pinned'),true);assert.equal(h.count(),'01 / 05');assert.equal(h.context.scrollY,1000);
+});

@@ -47,7 +47,8 @@
   let previousY=scrollY;
   addEventListener('scroll',()=>{
     const top=story.getBoundingClientRect().top;
-    if(!pinned&&!finished&&scrollY>previousY&&top<=24&&top+story.offsetHeight>0)pin();
+    const crossed=previousY<story.offsetTop&&scrollY>=story.offsetTop;
+    if(!pinned&&!finished&&scrollY>previousY&&(crossed||(top<=24&&top+story.offsetHeight>0)))pin();
     previousY=scrollY;
   },{passive:true});
   addEventListener('wheel',event=>{
@@ -73,7 +74,7 @@
   document.getElementById('run-prev').addEventListener('click',()=>{paused=true;advance(-1)});
   document.getElementById('run-next').addEventListener('click',()=>{paused=true;advance(1)});
   play.addEventListener('click',()=>{if(state===4&&!pinned){state=0;finished=false;}paused=!paused;if(!paused&&!reduced.matches){finished=false;pin()}render()});
-  story.querySelector('a[href="#future"]').addEventListener('click',()=>release());
+  story.querySelector('a[href="#future"]').addEventListener('click',()=>{finished=true;release()});
   document.getElementById('run-exit').addEventListener('click',()=>{if(pinned)release(true);else document.getElementById('future').scrollIntoView({behavior:'instant'})});
   document.addEventListener('focusin',e=>{if(pinned&&!story.contains(e.target))release()});
   document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(timer);film.pause()}else{started=performance.now();schedule();if(!paused&&pinned)film.play().catch(()=>{})}});
