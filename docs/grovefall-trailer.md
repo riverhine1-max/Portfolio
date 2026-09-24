@@ -10,4 +10,4 @@ Portfolio playback is user-controlled with native video controls, inline mobile 
 
 ## Delivery
 
-The 119.5-second, 1280 × 720 trailer combines eleven generated sequences with native Higgsedit graphics and a composed ending sound. The embedded file uses H.264/AAC with metadata at the beginning for faster web playback.
+Version 2 is a 158.8-second, 1280 × 720 trailer. It keeps the original eleven generated sequences and adds ten four-second atmospheric transition scenes, normalized shot audio, fades, and a continuous low musical bed. The original 119.5-second first cut remains available as `Media/grovefall-trailer-v1.mp4`, while `Media/grovefall-trailer.mp4` always points to the current featured cut. Both use H.264/AAC with metadata at the beginning for faster web playback.
