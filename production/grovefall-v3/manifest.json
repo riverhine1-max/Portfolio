@@ -1,0 +1,12 @@
+{
+  "title": "GROVEFALL Trailer V3",
+  "format": {"width": 1280, "height": 720, "fps": 24},
+  "editorial_rule": "Use real shots and hard action cuts; no transition-effect bridges.",
+  "continuity_shots": [
+    {"name": "Rooftop approach", "duration": 4, "source": "shot00 continuation", "purpose": "Carry the opening valley move into the hero close-up without repeating footage."},
+    {"name": "Combat aftermath", "duration": 4.5, "source": "shot06 continuation", "purpose": "Let smoke, debris, and the hero's recovery reset the pace before the world montage without repeating the combat beat."},
+    {"name": "Temple omen", "duration": 4, "source": "shot08", "purpose": "Enter the temple arena before preserving the hard cut into the heavy enemy landing."}
+  ],
+  "audio": "Original shot sound reduced under a continuous tonal score, wind bed, impact support, and a one-second silence before the Iron Spire reveal.",
+  "disclosure": "AI-generated gameplay vision; not recorded gameplay."
+}

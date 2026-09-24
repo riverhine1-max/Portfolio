@@ -1,12 +1,12 @@
 (() => {
   const data = {
     grovefall: [
-      {title:'GROVEFALL — Trailer V3', label:'Current cut', src:'Media/grovefall-trailer.mp4?v=3', poster:'Images/grovefall-poster.webp?v=3', description:'A continuity-led gameplay-vision trailer with direct action cuts and room for each scene to breathe.'},
+      {title:'GROVEFALL — Trailer V3', label:'Current cut', src:'Media/grovefall-trailer.mp4?v=3', poster:'Images/grovefall-poster.webp?v=3', description:'A continuity-led gameplay-vision trailer with three camera-led bridge shots, direct action cuts, and one continuous sound arc.'},
       {title:'GROVEFALL — Trailer V2', label:'Archive', src:'Media/grovefall-trailer-v2.mp4?v=2', poster:'Images/grovefall-trailer-v2-poster.webp?v=2', description:'The transition and sound pass that introduced a connected score arc.'},
       {title:'GROVEFALL — Trailer V1', label:'First cut', src:'Media/grovefall-trailer-v1.mp4?v=1', poster:'Images/grovefall-trailer-v1-poster.webp?v=1', description:'The original gameplay-vision assembly for the hero, world, combat, and Iron Spire.'}
     ],
     cinematic: [
-      {title:'GROVEFALL — Trailer V3', label:'Current cut', src:'Media/grovefall-trailer.mp4?v=3', poster:'Images/grovefall-poster.webp?v=3', description:'A cinematic gameplay vision for a samurai action game concept.'},
+      {title:'GROVEFALL — Trailer V3', label:'Current cut', src:'Media/grovefall-trailer.mp4?v=3', poster:'Images/grovefall-poster.webp?v=3', description:'A cinematic gameplay vision rebuilt around camera-led continuity shots and a unified sound arc.'},
       {title:'GROVEFALL — Trailer V2', label:'Archive', src:'Media/grovefall-trailer-v2.mp4?v=2', poster:'Images/grovefall-trailer-v2-poster.webp?v=2', description:'A previous GROVEFALL transition and sound pass.'},
       {title:'GROVEFALL — Trailer V1', label:'First cut', src:'Media/grovefall-trailer-v1.mp4?v=1', poster:'Images/grovefall-trailer-v1-poster.webp?v=1', description:'The original GROVEFALL gameplay-vision assembly.'},
       {title:'Portal world loop', label:'Homepage motion', src:'Media/portal-world-loop.mp4?v=portal3', poster:'Images/portal-world.webp?v=portal3', description:'A seamless ambient world loop for the portfolio home screen.'},
