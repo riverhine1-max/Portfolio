@@ -1,0 +1,58 @@
+/* GROVEFALL feature treatment: a clear second act to the Gilded Fate flagship.
+   Ember accent comes from the trailer's sunset palette so it reads as its own world
+   without borrowing the flagship's gold. Loaded only on index.html and WorkSample.html. */
+:root{--ember:#e8894f;--ember-soft:#f3b27a;--ember-line:#e8894f55}
+
+.gf-flag{display:inline-flex;align-items:center;gap:8px;width:max-content;border:1px solid var(--ember-line);background:#1a110cb3;color:#ffd6b0;border-radius:50px;padding:7px 13px;font:10px 'Courier New',monospace;letter-spacing:.14em;text-transform:uppercase}
+.gf-flag:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 4px #e8894f26}
+.gf-wordmark{background:linear-gradient(100deg,#fff1dc 0%,#f6c592 45%,var(--ember) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Home: full-width GROVEFALL card leading the future section */
+.future-grid>.grovefall-card{grid-column:1/-1;grid-row:auto;min-height:0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);grid-template-areas:"intro trailer" "details trailer" "progress progress";column-gap:44px;row-gap:22px;align-items:start;padding:40px;border-color:var(--ember-line);background:radial-gradient(ellipse at 78% -10%,#6b3a2466 0%,transparent 55%),radial-gradient(ellipse at -5% 110%,#3d23175e 0%,transparent 55%),#0e1112;box-shadow:0 40px 90px -60px #e8894f66}
+.future-grid>.grovefall-card .grovefall-intro{grid-area:intro}
+.grovefall-intro .gf-flag{display:flex;margin-bottom:18px}
+.future-grid>.grovefall-card .grovefall-trailer{grid-area:trailer;align-self:center;border-color:#e8894f40;box-shadow:0 24px 60px -30px #000}
+.future-grid>.grovefall-card .grovefall-details{grid-area:details;align-self:end}
+.future-grid>.grovefall-card .grovefall-progress{grid-area:progress}
+.future-grid>.grovefall-card .eyebrow{color:#f0b27f}
+.future-grid>.grovefall-card h3{font-size:clamp(36px,3.6vw,56px);font-weight:600;letter-spacing:.1em;white-space:nowrap;line-height:1;margin:18px 0 16px}
+.future-grid>.grovefall-card .grovefall-intro p{font-size:15px;line-height:1.8;color:#cfc8bf}
+.future-grid>.grovefall-card .grovefall-release{font-size:22px;color:#fff1dc}
+.future-grid>.grovefall-card .text-link{color:#ffd6b0}
+.future-grid>.grovefall-card .grovefall-progress li.is-current{border-color:#e8894f80;background:linear-gradient(145deg,#2e1d14cc,#0c1011cc)}
+.future-grid>.grovefall-card .grovefall-progress li a{color:var(--ember-soft)}
+.future-grid>.grovefall-card .grovefall-progress ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+.future-grid>.grovefall-card .grovefall-progress{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);column-gap:44px;align-items:center}
+.future-grid>.grovefall-card .grovefall-progress h4{margin-bottom:0}
+
+/* Work page: GROVEFALL band directly under the flagship card, visibly smaller */
+.grovefall-feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);border:1px solid var(--ember-line);border-radius:8px;overflow:hidden;background:radial-gradient(ellipse at 100% 0%,#5a301d55 0%,transparent 60%),#0f1213;box-shadow:0 30px 70px -50px #e8894f66}
+.grovefall-feature .gf-media{position:relative;margin:0;min-height:100%;background:#050707}
+.grovefall-feature .gf-media img{display:block;width:100%;height:100%;min-height:230px;max-height:290px;object-fit:cover;object-position:50% 78%}
+.grovefall-feature .gf-media:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,#0f1213 100%);pointer-events:none}
+.grovefall-feature .gf-flag{position:absolute;left:16px;top:16px;z-index:1;backdrop-filter:blur(6px)}
+.grovefall-feature .gf-content{padding:26px 32px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.grovefall-feature .project-type{color:#f0b27f}
+.grovefall-feature h3{font-size:clamp(28px,2.8vw,34px);font-weight:600;letter-spacing:.12em;line-height:1;margin:14px 0 14px}
+.grovefall-feature p{font-size:14px;line-height:1.75;color:#c9c3bb;margin:0 0 12px}
+.grovefall-feature .gf-meta{font:10px 'Courier New',monospace;letter-spacing:.08em;color:#b3aca3;text-transform:uppercase}
+.grovefall-feature .gf-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:10px}
+.grovefall-feature .gf-actions .button.primary{background:transparent;border:1px solid var(--ember);color:#ffd6b0}
+.grovefall-feature .gf-actions .button.primary:hover{background:#e8894f26;border-color:var(--ember-soft)}
+.grovefall-feature .gf-actions .text-link{color:#ffd6b0}
+
+@media(max-width:900px){
+  .future-grid>.grovefall-card{grid-template-columns:1fr;grid-template-areas:"intro" "trailer" "details" "progress";padding:28px}
+  .future-grid>.grovefall-card .grovefall-progress{display:block}
+  .future-grid>.grovefall-card .grovefall-progress h4{margin-bottom:20px}
+  .grovefall-feature{grid-template-columns:1fr}
+  .grovefall-feature .gf-media img{min-height:0;aspect-ratio:16/9}
+  .grovefall-feature .gf-media:after{background:linear-gradient(0deg,#0f1213 0%,transparent 35%)}
+}
+@media(max-width:760px){
+  .future-grid>.grovefall-card{padding:24px;row-gap:18px}
+  .future-grid>.grovefall-card h3{font-size:clamp(30px,9vw,44px);letter-spacing:.08em}
+  .future-grid>.grovefall-card .grovefall-progress ol{grid-template-columns:1fr}
+  .grovefall-feature .gf-content{padding:22px 22px 26px}
+  .grovefall-feature h3{font-size:30px}
+}
