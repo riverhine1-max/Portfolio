@@ -25,9 +25,7 @@ study. Future Works clearly distinguishes concepts and plans from shipped work.
 - `Media/vanguard-{deck,path,fight,rewards,shape}.mp4`: five Higgsfield / Kling 3.0
   motion studies using the existing Vanguard portrait as their reference.
   These are presentation animations, not footage of implemented game mechanics.
-- `Media/portal-world-loop.mp4`: existing portal film, edited to rotate its
-  starting point and dissolve its last second into the original first second.
-  Audio is removed; H.264 fast-start encoding is used throughout.
+- `Media/portal-world-loop.mp4`: eight-second loop built from newly generated Higgsfield portal artwork and animated in Higgsedit with a cyclic camera move, moving clouds and water, floating monoliths, a swirling gate interior, travelling ring light and flowing energy-river glints. The matching poster is taken from the first rendered frame. The loop is silent H.264 with fast-start metadata.
 
 Existing project screenshots and case studies remain available. About and
 Contact retain their content, with shared identity and navigation updates.
