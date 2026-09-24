@@ -24,7 +24,7 @@
 
   /* ---------------------------------------------------------------- chrome */
   const chrome = d.createElement('div');
-  chrome.innerHTML = `<div class="grain" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div><div class="progress" aria-hidden="true"></div><div class="curtain" aria-hidden="true">${MARK}</div>${fine && !reduced ? '<div class="cursor is-hidden" aria-hidden="true"><div class="cursor__ring"><span class="cursor__label"></span></div><div class="cursor__dot"></div></div>' : ''}`;
+  chrome.innerHTML = `<div class="grain" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div><div class="progress" aria-hidden="true"></div><div class="curtain" aria-hidden="true">${MARK}</div>`;
   body.append(...chrome.children);
   const progressBar = $('.progress'), curtain = $('.curtain');
 
@@ -246,35 +246,6 @@
     d.addEventListener('keydown', e => { if (e.key === 'Escape' && root.classList.contains('menu-open')) { setMenu(false); menuBtn.focus(); } });
     narrow.addEventListener('change', () => setMenu(false));
     menu.addEventListener('click', e => { if (e.target.closest('a')) setTimeout(() => setMenu(false), 500); });
-  }
-
-  /* ---------------------------------------------------------------- cursor */
-  const cursor = $('.cursor');
-  if (cursor) {
-    root.classList.add('has-cursor');
-    const ring = $('.cursor__ring', cursor), dot = $('.cursor__dot', cursor), label = $('.cursor__label', cursor);
-    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-    addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; mx = e.clientX; my = e.clientY; cursor.classList.remove('is-hidden'); }, { passive: true });
-    d.addEventListener('pointerleave', () => cursor.classList.add('is-hidden'));
-    addEventListener('blur', () => cursor.classList.add('is-hidden'));
-    addEventListener('pointerdown', () => cursor.classList.add('is-down'));
-    addEventListener('pointerup', () => cursor.classList.remove('is-down'));
-    d.addEventListener('pointerover', e => {
-      const t = e.target.closest('[data-cursor],a,button,[role="button"],label,summary');
-      const media = e.target.closest('iframe,video[controls],input,textarea,select');
-      cursor.classList.toggle('is-hidden', !!media);
-      if (!t) { cursor.classList.remove('is-link', 'is-label'); return; }
-      const text = t.dataset.cursor;
-      if (text) { label.textContent = text; cursor.classList.add('is-label'); cursor.classList.remove('is-link'); }
-      else { cursor.classList.add('is-link'); cursor.classList.remove('is-label'); }
-    });
-    const move = () => {
-      rx = lerp(rx, mx, .18); ry = lerp(ry, my, .18);
-      dot.style.transform = `translate3d(${mx}px,${my}px,0)`;
-      ring.style.transform = `translate3d(${rx}px,${ry}px,0)`;
-      requestAnimationFrame(move);
-    };
-    move();
   }
 
   /* ------------------------------------------------------ magnetic / tilt */
