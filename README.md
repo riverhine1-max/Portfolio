@@ -1,5 +1,12 @@
 # River Hine — Portfolio
 
+## GROVEFALL and future development work
+
+- `Grovefall.html` is the public samurai action-game concept page, with the current trailer and version carousel.
+- `GrovefallGDD.html` is the readable public game design document; `docs/grovefall-gdd.md` is its editable source and `Documents/GROVEFALL-GDD.pdf` is the download.
+- `CustomAIResearch.html` records a research-stage AI workflow project without claiming a released product.
+- The cinematic carousel deliberately loads only the selected video. GROVEFALL trailers are AI-generated gameplay visions and always carry that disclosure.
+
 A static portfolio for game development, systems design, and web projects, with a cinematic motion-led homepage inspired by the immersive examples in the MotionSites gallery.
 
 ## Pages

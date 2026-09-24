@@ -11,7 +11,7 @@ for(const width of [1440,1024,768,390,360]){
  ok(await p.locator('h1').count()===1,'h1');ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'overflow '+width);
  await p.locator('.world-visual img').evaluate(i=>i.decode());
  await p.waitForFunction(()=>{const v=document.querySelector('#world-film');return !v.paused&&v.currentTime>0});
- ok(await p.locator('.world-motion').count()===0,'activation button removed');
+ ok(await p.locator('.world-motion').count()===1,'film pause control');
  for(const key of ['nuts','web','gilded']){await p.locator(`[data-showcase="${key}"]`).click();await p.locator('#showcase-image').evaluate(i=>i.decode());ok(await p.locator(`[data-showcase="${key}"]`).getAttribute('aria-pressed')==='true','project selector');}
  await p.locator('[data-showcase="gilded"]').press('ArrowRight');ok(await p.locator('[data-showcase="nuts"]').getAttribute('aria-pressed')==='true','keyboard selector');
  await p.locator('[data-showcase="gilded"]').click();
