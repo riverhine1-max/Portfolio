@@ -1,5 +1,5 @@
 /* ==========================================================================
-   WORK ARCHIVE — renders every project from assets/projects.js into three
+   WORK ARCHIVE — renders every project from projects.js into three
    views (grid / index / timeline), handles filters, open slots, and the
    project viewer dialog. Deep links: WorkSample.html#<project-id> opens a
    project; ?view=index|timeline picks a view; #experiments filters the lab.
