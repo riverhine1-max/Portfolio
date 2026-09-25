@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#23664a"/><stop offset="1" stop-color="#0b2118"/></linearGradient><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#e9c37c" stop-opacity=".42"/><stop offset="1" stop-color="#e9c37c" stop-opacity="0"/></radialGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="268" r="118" fill="url(#glow)"/>
+  <path d="M256 112 L385.9 187 L385.9 337 L256 412 L126.1 337 L126.1 187 Z" fill="none" stroke="#f3eee4" stroke-width="22" stroke-linejoin="round"/>
+  <path d="M256 170 L343 322 L169 322 Z" fill="none" stroke="#f3eee4" stroke-opacity=".5" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M256 112 L256 170 M385.9 337 L343 322 M126.1 337 L169 322 M169 322 L256 412 L343 322 M126.1 187 L256 170 L385.9 187 M126.1 187 L169 322 M385.9 187 L343 322" fill="none" stroke="#f3eee4" stroke-opacity=".28" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M256 208 C261 247 274 259 312 266 C274 273 261 285 256 324 C251 285 238 273 200 266 C238 259 251 247 256 208 Z" fill="#e9c37c"/>
+  <circle cx="318" cy="208" r="9" fill="#e9c37c" fill-opacity=".85"/>
+</svg>

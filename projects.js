@@ -201,24 +201,27 @@ window.PROJECTS = [
     featured: 5,
     timeline: 10.5,
     era: "Next · First research prototype",
-    discipline: "TypeScript · React · In-browser AI",
-    status: "Playable prototype",
+    discipline: "AI app · TypeScript · React · Electron",
+    status: "Playable app · v1.0",
     tone: "jade",
-    summary: "An AI game-design partner that asks questions, gives honest feedback, and keeps notes of every decision. Free, no account: the AI runs in your browser.",
-    tags: ["TypeScript", "React", "WebGPU", "AI tools", "Game design"],
+    summary: "An AI game-design app that asks questions, gives honest feedback, and keeps notes of every decision. Its own free AI, Ludomuse, runs on your device. Install it or download it for Windows.",
+    tags: ["TypeScript", "React", "WebGPU", "Electron", "AI tools", "Game design"],
     cover: "Images/portfolio-projects/game-design-copilot-cover.webp",
     thumb: "Images/optimized/game-design-copilot-cover-thumb.webp",
-    coverAlt: "Game Design Copilot: a design chat, a Saved to your notes card, and the Summary panel",
+    coverAlt: "Game Design Copilot: a design chat, a Saved to your notes card, and the Summary panel with the game size meter",
     focus: "50% 20%",
     page: "GameDesignCopilot.html",
     timelineCopy: "Turning my design-research questions into a working AI tool that remembers decisions.",
     details: [
       ["My role", "Product idea, full feature spec, and design direction"],
-      ["Tech", "TypeScript, React, WebLLM on WebGPU, IndexedDB, Vitest"],
+      ["Tech", "TypeScript, React, WebLLM (WebGPU), Electron"],
       ["Development approach", "AI-assisted build: Claude wrote most of the code from my written spec; I made the design decisions"]
     ],
     media: [
       { type: "image", src: "Images/portfolio-projects/game-design-copilot-cover.webp", thumbnail: "Images/optimized/game-design-copilot-cover-thumb.webp", alt: "Chat, saved notes and summary" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-splash.webp", thumbnail: "Images/optimized/game-design-copilot-splash-thumb.webp", alt: "Loading screen" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-welcome.webp", thumbnail: "Images/optimized/game-design-copilot-welcome-thumb.webp", alt: "Choose Ludomuse, ChatGPT or Claude" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-dice-scope.webp", thumbnail: "Images/optimized/game-design-copilot-dice-scope-thumb.webp", alt: "Design dice and the game size meter" },
       { type: "image", src: "Images/portfolio-projects/game-design-copilot-ideas.webp", thumbnail: "Images/optimized/game-design-copilot-ideas-thumb.webp", alt: "AI ideas wait for your yes" },
       { type: "image", src: "Images/portfolio-projects/game-design-copilot-critique.webp", thumbnail: "Images/optimized/game-design-copilot-critique-thumb.webp", alt: "Honest feedback on combat" },
       { type: "image", src: "Images/portfolio-projects/game-design-copilot-consequences.webp", thumbnail: "Images/optimized/game-design-copilot-consequences-thumb.webp", alt: "What this change affects" },
@@ -229,11 +232,12 @@ window.PROJECTS = [
       { type: "image", src: "Images/portfolio-projects/game-design-copilot-phone-chat.webp", thumbnail: "Images/optimized/game-design-copilot-phone-chat-thumb.webp", alt: "Phone: design chat" }
     ],
     links: [
-      ["Open the app", "Project/game-design-copilot/index.html", true]
+      ["Open the app", "Project/game-design-copilot/index.html", true],
+      ["Download for Windows", "https://github.com/riverhine1-max/Custom-Ai/releases/latest", false]
     ],
-    modalType: "Web app • In-browser AI",
-    modalStatus: "Playable prototype · V1",
-    description: "An AI design partner for solo developers and beginners. It keeps structured notes, never saves an AI suggestion without a yes, remembers ruled-out ideas, and shows what a change affects. The default AI runs free in the browser, with no account."
+    modalType: "AI app • Browser, installable & Windows",
+    modalStatus: "Playable app · v1.0",
+    description: "An AI design partner for solo developers and beginners. It keeps structured notes, never saves an AI suggestion without a yes, remembers ruled-out ideas, and shows what a change affects. Its own AI, Ludomuse, runs free on your device, or use ChatGPT or Claude."
   },
   {
     id: "custom-ai",
