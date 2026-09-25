@@ -586,12 +586,14 @@
   /* -------------------------------------------------------- video carousel */
   const VIDEO_SETS = {
     grovefall: [
-      { title: 'GROVEFALL — Trailer V3', label: 'Current cut', src: 'Media/grovefall-trailer.mp4?v=3', poster: 'Images/grovefall-poster.webp?v=3', description: 'A continuity-led gameplay-vision trailer with three camera-led bridge shots, direct action cuts, and one continuous sound arc.' },
+      { title: 'GROVEFALL — Trailer V4', label: 'Current cut', src: 'Media/grovefall-trailer-v4.mp4?v=4', poster: 'Images/grovefall-trailer-v4-poster.webp?v=4', description: 'A five-chapter gameplay-vision trailer with a locked hero design, extended action, a lived-in squirrel civilization, and the complete Iron Spire reveal.' },
+      { title: 'GROVEFALL — Trailer V3', label: 'Archive', src: 'Media/grovefall-trailer.mp4?v=3', poster: 'Images/grovefall-poster.webp?v=3', description: 'A continuity-led gameplay-vision trailer with three camera-led bridge shots, direct action cuts, and one continuous sound arc.' },
       { title: 'GROVEFALL — Trailer V2', label: 'Archive', src: 'Media/grovefall-trailer-v2.mp4?v=2', poster: 'Images/grovefall-trailer-v2-poster.webp?v=2', description: 'The transition and sound pass that introduced a connected score arc.' },
       { title: 'GROVEFALL — Trailer V1', label: 'First cut', src: 'Media/grovefall-trailer-v1.mp4?v=1', poster: 'Images/grovefall-trailer-v1-poster.webp?v=1', description: 'The original gameplay-vision assembly for the hero, world, combat, and Iron Spire.' }
     ],
     cinematic: [
-      { title: 'GROVEFALL — Trailer V3', label: 'Current cut · AI vision', src: 'Media/grovefall-trailer.mp4?v=3', poster: 'Images/grovefall-poster.webp?v=3', description: 'A cinematic gameplay vision rebuilt around camera-led continuity shots and a unified sound arc. AI-generated, not recorded gameplay.' },
+      { title: 'GROVEFALL — Trailer V4', label: 'Current cut · AI vision', src: 'Media/grovefall-trailer-v4.mp4?v=4', poster: 'Images/grovefall-trailer-v4-poster.webp?v=4', description: 'A five-chapter cinematic gameplay vision with a locked hero design and complete Iron Spire journey. AI-generated, not recorded gameplay.' },
+      { title: 'GROVEFALL — Trailer V3', label: 'Archive · AI vision', src: 'Media/grovefall-trailer.mp4?v=3', poster: 'Images/grovefall-poster.webp?v=3', description: 'A continuity-led gameplay vision rebuilt around camera-led shots and a unified sound arc. AI-generated, not recorded gameplay.' },
       { title: 'Gilded Fate — Gameplay', label: 'Recorded gameplay', src: 'Media/gilded-fate-gameplay.mp4', poster: 'Images/portfolio-projects/gilded-fate-gameplay-poster.webp', description: 'Actual development footage from the current Unity build of Gilded Fate.' },
       { title: 'Exploding Nuts — Unity', label: 'Recorded gameplay', src: 'Media/exploding-nuts-unity-gameplay.mp4', poster: 'Images/portfolio-projects/exploding-nuts-unity-gameplay-poster.webp', description: 'The Unity / C# evolution of the Exploding Nuts arena roguelite.' },
       { title: 'GROVEFALL — Trailer V2', label: 'Archive · AI vision', src: 'Media/grovefall-trailer-v2.mp4?v=2', poster: 'Images/grovefall-trailer-v2-poster.webp?v=2', description: 'A previous GROVEFALL transition and sound pass.' },
