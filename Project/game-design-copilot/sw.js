@@ -2,7 +2,7 @@
 // time, so an update replaces the old files the next time the app opens.
 // Only the app's own files (and its fonts) are cached here. AI services and
 // Ludomuse's model files are not: WebLLM keeps its own model cache.
-const CACHE = "gdc-1790372752699";
+const CACHE = "gdc-1790374290066";
 const CORE = ["./", "./index.html", "./main.js", "./main.css", "./webllm-worker.js", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", (e) => {
