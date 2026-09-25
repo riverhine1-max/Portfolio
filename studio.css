@@ -691,7 +691,7 @@ a.contact-card:hover .arrow{transform:rotate(45deg);color:var(--gold)}
 .modal__close{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);font-size:22px;line-height:1;transition:background-color .3s,color .3s,transform .5s var(--ease)}
 .modal__close:hover{background:var(--bone);color:var(--ink);transform:rotate(90deg)}
 .modal__content{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(320px,.9fr);max-height:calc(100svh - 32px - 70px);overflow:auto}
-.modal__media{display:grid;grid-template-rows:minmax(0,1fr) auto;background:#000;min-height:0}
+.modal__media{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;background:#000;min-height:0;min-width:0}
 .modal__stage{position:relative;display:grid;place-items:center;aspect-ratio:16/10;background:#000;overflow:hidden}
 .modal__stage img,.modal__stage video{width:100%;height:100%;object-fit:contain}
 .modal__stage iframe{width:100%;height:100%;border:0;background:#fff}

@@ -3,7 +3,7 @@
 // Set TEST_URL to change the base URL (include the trailing slash).
 const { chromium } = require('playwright');
 const BASE = process.env.TEST_URL || 'http://127.0.0.1:8123/';
-const PAGES = ['index.html', 'WorkSample.html', 'GildedFate.html', 'ExplodingNuts.html', 'WebsiteRedesigns.html', 'Grovefall.html', 'GrovefallGDD.html', 'CustomAIResearch.html', 'About.html', 'Resume.html', 'Contact.html', 'Certifications.html'];
+const PAGES = ['index.html', 'WorkSample.html', 'GildedFate.html', 'ExplodingNuts.html', 'WebsiteRedesigns.html', 'Grovefall.html', 'GrovefallGDD.html', 'CustomAIResearch.html', 'GameDesignCopilot.html', 'About.html', 'Resume.html', 'Contact.html', 'Certifications.html'];
 const WIDTHS = [1440, 390];
 
 (async () => {

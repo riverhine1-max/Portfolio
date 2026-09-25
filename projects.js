@@ -35,7 +35,7 @@
    }
    ========================================================================== */
 window.SITE = {
-  openSlots: 2 // reserved "next project" cards shown after your work
+  openSlots: 1 // reserved "next project" cards shown after your work
 };
 
 window.PROJECTS = [
@@ -192,6 +192,48 @@ window.PROJECTS = [
     modalType: "Web Design • Client-style demos",
     modalStatus: "Live",
     description: "A set of unofficial redesign concepts for real Treasure Valley businesses. I research each business, rebuild the presentation around clearer calls to action and modern responsive design, host the demos with GitHub Pages, and use them for real outreach."
+  },
+  {
+    id: "game-design-copilot",
+    title: "Game Design Copilot",
+    year: "2026",
+    categories: ["web"],
+    featured: 5,
+    timeline: 10.5,
+    era: "Next · First research prototype",
+    discipline: "TypeScript · React · In-browser AI",
+    status: "Playable prototype",
+    tone: "jade",
+    summary: "An AI game-design partner that asks questions, gives honest feedback, and keeps notes of every decision. Free, no account: the AI runs in your browser.",
+    tags: ["TypeScript", "React", "WebGPU", "AI tools", "Game design"],
+    cover: "Images/portfolio-projects/game-design-copilot-cover.webp",
+    thumb: "Images/optimized/game-design-copilot-cover-thumb.webp",
+    coverAlt: "Game Design Copilot: a design chat, a Saved to your notes card, and the Summary panel",
+    focus: "50% 20%",
+    page: "GameDesignCopilot.html",
+    timelineCopy: "Turning my design-research questions into a working AI tool that remembers decisions.",
+    details: [
+      ["My role", "Product idea, full feature spec, and design direction"],
+      ["Tech", "TypeScript, React, WebLLM on WebGPU, IndexedDB, Vitest"],
+      ["Development approach", "AI-assisted build: Claude wrote most of the code from my written spec; I made the design decisions"]
+    ],
+    media: [
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-cover.webp", thumbnail: "Images/optimized/game-design-copilot-cover-thumb.webp", alt: "Chat, saved notes and summary" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-ideas.webp", thumbnail: "Images/optimized/game-design-copilot-ideas-thumb.webp", alt: "AI ideas wait for your yes" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-critique.webp", thumbnail: "Images/optimized/game-design-copilot-critique-thumb.webp", alt: "Honest feedback on combat" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-consequences.webp", thumbnail: "Images/optimized/game-design-copilot-consequences-thumb.webp", alt: "What this change affects" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-notes.webp", thumbnail: "Images/optimized/game-design-copilot-notes-thumb.webp", alt: "Notes: every fact with a status" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-plan.webp", thumbnail: "Images/optimized/game-design-copilot-plan-thumb.webp", alt: "Game plan built from decided notes" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-home.webp", thumbnail: "Images/optimized/game-design-copilot-home-thumb.webp", alt: "Home: start from a one-line idea" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-settings.webp", thumbnail: "Images/optimized/game-design-copilot-settings-thumb.webp", alt: "Built-in AI settings: Light, Balanced, Smart" },
+      { type: "image", src: "Images/portfolio-projects/game-design-copilot-phone-chat.webp", thumbnail: "Images/optimized/game-design-copilot-phone-chat-thumb.webp", alt: "Phone: design chat" }
+    ],
+    links: [
+      ["Open the app", "Project/game-design-copilot/index.html", true]
+    ],
+    modalType: "Web app • In-browser AI",
+    modalStatus: "Playable prototype · V1",
+    description: "An AI design partner for solo developers and beginners. It keeps structured notes, never saves an AI suggestion without a yes, remembers ruled-out ideas, and shows what a change affects. The default AI runs free in the browser, with no account."
   },
   {
     id: "custom-ai",

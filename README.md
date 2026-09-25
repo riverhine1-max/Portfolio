@@ -18,6 +18,7 @@ Everything on the Work page — grid, index, filters, Then → Now timeline, pro
 - `index.html` — loader, portal-film hero with ember particles, scroll-pinned project reel, the Gilded Fate “every choice changes the run” chapters, future projects and open slots, about teaser, contact.
 - `WorkSample.html` — the full archive with filters, grid / index / timeline views, open slots, the project viewer (deep links like `WorkSample.html#gilded-fate`), and the video reel.
 - `GildedFate.html`, `ExplodingNuts.html`, `WebsiteRedesigns.html` — case studies.
+- `GameDesignCopilot.html` — case study for the Game Design Copilot, the AI design tool in homepage Slot 11. The playable app itself lives in `Project/game-design-copilot/` (a built copy; see the README there).
 - `Grovefall.html`, `GrovefallGDD.html`, `CustomAIResearch.html` — future development projects. GROVEFALL trailers are AI-generated gameplay visions and always carry that disclosure.
 - `About.html`, `Resume.html`, `Contact.html`, `Certifications.html`, `404.html`.
 - `Project/` demos and the legacy ARC pages are preserved as-is.
