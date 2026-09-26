@@ -1,0 +1,42 @@
+{
+  "project": "GROVEFALL",
+  "version": "V5",
+  "note": "Previous generated clips are preserved here by immutable Higgsfield job and media URL. The revised master replaces only scenes 2 and 7.",
+  "first_pass_master": {
+    "media_id": "09cee475-df52-46a8-9bef-49d41e5e3046",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/09cee475-df52-46a8-9bef-49d41e5e3046.mp4"
+  },
+  "replaced_clips": [
+    {
+      "scene": 2,
+      "name": "Glacier bridge first pass",
+      "job_id": "0c684db1-49ff-428a-bca4-80f433388265",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/hf_20260925_115653_0c684db1-49ff-428a-bca4-80f433388265.mp4"
+    },
+    {
+      "scene": 7,
+      "name": "Construct arm run first pass",
+      "job_id": "34fa4365-cce9-4885-8718-f57ee092ce88",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/hf_20260925_120923_34fa4365-cce9-4885-8718-f57ee092ce88.mp4"
+    }
+  ],
+  "replacement_clips": [
+    {
+      "scene": 2,
+      "name": "Aligned glacier bridge",
+      "job_id": "4e5c563b-5cb3-415c-8eeb-ce83d410ed50",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/hf_20260926_004440_4e5c563b-5cb3-415c-8eeb-ce83d410ed50.mp4"
+    },
+    {
+      "scene": 7,
+      "name": "Active construct fight and crystal strike",
+      "job_id": "4b8330b2-e1d7-42a6-9558-4ff85493a033",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/hf_20260926_004440_4b8330b2-e1d7-42a6-9558-4ff85493a033.mp4"
+    }
+  ],
+  "current_master": {
+    "media_id": "423ea394-332b-456b-bd15-64231304a553",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/423ea394-332b-456b-bd15-64231304a553.mp4",
+    "duration_seconds": 92.8
+  }
+}
