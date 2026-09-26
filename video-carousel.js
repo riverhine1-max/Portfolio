@@ -1,13 +1,13 @@
 (() => {
   const data = {
     grovefall: [
-      {title:'GROVEFALL — Trailer V4', label:'Current cut', src:'Media/grovefall-trailer-v4.mp4?v=4r2', poster:'Images/grovefall-trailer-v4-poster.webp?v=4r2', description:'A cinematic journey through snow, a rain-soaked squirrel village, the construct forest, a living tree-city, and the final Iron Spire reveal.'},
+      {title:'GROVEFALL — Trailer V4', label:'Current cut', src:'https://d2ol7oe51mr4n9.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/09cee475-df52-46a8-9bef-49d41e5e3046.mp4', poster:'Images/grovefall-trailer-v4-poster.webp?v=4r3', description:'A 93-second cinematic journey rebuilt from scratch with world exploration, grounded weapon-switch combat, the living squirrel tree-city, and a final Iron Spire reveal.'},
       {title:'GROVEFALL — Trailer V3', label:'Archive', src:'Media/grovefall-trailer.mp4?v=3', poster:'Images/grovefall-poster.webp?v=3', description:'A continuity-led gameplay-vision trailer with three camera-led bridge shots, direct action cuts, and one continuous sound arc.'},
       {title:'GROVEFALL — Trailer V2', label:'Archive', src:'Media/grovefall-trailer-v2.mp4?v=2', poster:'Images/grovefall-trailer-v2-poster.webp?v=2', description:'The transition and sound pass that introduced a connected score arc.'},
       {title:'GROVEFALL — Trailer V1', label:'First cut', src:'Media/grovefall-trailer-v1.mp4?v=1', poster:'Images/grovefall-trailer-v1-poster.webp?v=1', description:'The original gameplay-vision assembly for the hero, world, combat, and Iron Spire.'}
     ],
     cinematic: [
-      {title:'GROVEFALL — Trailer V4', label:'Current cut', src:'Media/grovefall-trailer-v4.mp4?v=4r2', poster:'Images/grovefall-trailer-v4-poster.webp?v=4r2', description:'A cinematic journey through snow, a rain-soaked squirrel village, the construct forest, a living tree-city, and the final Iron Spire reveal.'},
+      {title:'GROVEFALL — Trailer V4', label:'Current cut', src:'https://d2ol7oe51mr4n9.cloudfront.net/user_3J90Kiwz4QISGac5QlSgYngKSH0/09cee475-df52-46a8-9bef-49d41e5e3046.mp4', poster:'Images/grovefall-trailer-v4-poster.webp?v=4r3', description:'A 93-second cinematic journey rebuilt from scratch with world exploration, grounded weapon-switch combat, the living squirrel tree-city, and a final Iron Spire reveal.'},
       {title:'GROVEFALL — Trailer V3', label:'Archive', src:'Media/grovefall-trailer.mp4?v=3', poster:'Images/grovefall-poster.webp?v=3', description:'A cinematic gameplay vision rebuilt around camera-led continuity shots and a unified sound arc.'},
       {title:'GROVEFALL — Trailer V2', label:'Archive', src:'Media/grovefall-trailer-v2.mp4?v=2', poster:'Images/grovefall-trailer-v2-poster.webp?v=2', description:'A previous GROVEFALL transition and sound pass.'},
       {title:'GROVEFALL — Trailer V1', label:'First cut', src:'Media/grovefall-trailer-v1.mp4?v=1', poster:'Images/grovefall-trailer-v1-poster.webp?v=1', description:'The original GROVEFALL gameplay-vision assembly.'},
