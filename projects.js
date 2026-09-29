@@ -48,7 +48,7 @@ window.PROJECTS = [
     timeline: 8,
     era: "Now · Flagship",
     discipline: "Unity · C# · Roguelike deckbuilder",
-    status: "In development",
+    status: "In development · Goal: Steam",
     tone: "jade",
     summary: "A dark-fantasy roguelike deckbuilder with three playable heroes, branching routes, relics, status effects, and interlocking card systems.",
     tags: ["Unity", "C#", "Systems design", "UI/UX", "Balancing"],
@@ -66,6 +66,8 @@ window.PROJECTS = [
     ],
     media: [
       { type: "image", src: "Images/portfolio-projects/gilded-fate-title-20260916.webp", thumbnail: "Images/optimized/gilded-fate-title-20260916-thumb.webp", alt: "Title screen" },
+      { type: "video", src: "Media/gilded-fate-trailer-gameplay.mp4?v=1", poster: "Images/portfolio-projects/gilded-fate-trailer-gameplay-poster.webp?v=1", alt: "Gilded Fate — Gameplay Trailer (recorded in-engine)" },
+      { type: "video", src: "Media/gilded-fate-trailer-different.mp4?v=1", poster: "Images/portfolio-projects/gilded-fate-trailer-different-poster.webp?v=1", alt: "Gilded Fate — What Makes It Different trailer (recorded in-engine)" },
       { type: "video", src: "Media/gilded-fate-gameplay.mp4", poster: "Images/portfolio-projects/gilded-fate-gameplay-poster.webp", alt: "Unity / C# · Gilded Fate gameplay" },
       { type: "image", src: "Images/portfolio-projects/gilded-fate-vanguard-20260916.webp", thumbnail: "Images/optimized/gilded-fate-vanguard-20260916-thumb.webp", alt: "The Vanguard — character archive" },
       { type: "image", src: "Images/portfolio-projects/gilded-fate-hexer-20260916.webp", thumbnail: "Images/optimized/gilded-fate-hexer-20260916-thumb.webp", alt: "The Hexer — character archive" },
