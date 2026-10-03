@@ -331,9 +331,19 @@
       if (content) { content.style.transform = `translate3d(0,${p * -90}px,0)`; content.style.opacity = String(clamp(1 - p * 1.35, 0, 1)); }
     });
     if (video && !reduced && !saveData) {
-      const startFilm = () => {
-        video.src = video.dataset.src; video.load();
-        video.addEventListener('canplay', () => { video.classList.add('is-ready'); if (!userPaused) video.play().catch(() => {}); }, { once: true });
+      const startFilm = async () => {
+        // Cache the complete short clip before playback so repeating it never
+        // waits for another network range request at the loop boundary.
+        video.preload = 'auto';
+        video.addEventListener('canplay', () => { video.classList.add('is-ready'); if (!userPaused && heroVisible && !d.hidden) video.play().catch(() => {}); }, { once: true });
+        try {
+          const response = await fetch(video.dataset.src, { cache: 'force-cache' });
+          if (!response.ok) throw new Error('Film unavailable');
+          video.src = URL.createObjectURL(await response.blob());
+        } catch {
+          video.src = video.dataset.src;
+        }
+        video.load();
       };
       d.readyState === 'complete' ? setTimeout(startFilm, 400) : addEventListener('load', () => setTimeout(startFilm, 400), { once: true });
       new IntersectionObserver(([e]) => { if (!video.src) return; e.isIntersecting && !userPaused ? video.play().catch(() => {}) : video.pause(); }).observe(hero);
@@ -602,7 +612,7 @@
       { title: 'Gilded Fate — Gameplay', label: 'Recorded gameplay', src: 'Media/gilded-fate-gameplay.mp4', poster: 'Images/portfolio-projects/gilded-fate-gameplay-poster.webp', description: 'Actual development footage from the current Unity build of Gilded Fate.' },
       { title: 'Exploding Nuts — Unity', label: 'Recorded gameplay', src: 'Media/exploding-nuts-unity-gameplay.mp4', poster: 'Images/portfolio-projects/exploding-nuts-unity-gameplay-poster.webp', description: 'The Unity / C# evolution of the Exploding Nuts arena roguelite.' },
       { title: 'GROVEFALL — Trailer V2', label: 'Archive · AI vision', src: 'Media/grovefall-trailer-v2.mp4?v=2', poster: 'Images/grovefall-trailer-v2-poster.webp?v=2', description: 'A previous GROVEFALL transition and sound pass.' },
-      { title: 'Ruined city loop', label: 'Homepage motion', src: 'Media/ruined-city-loop.mp4?v=city2k', poster: 'Images/ruined-city-poster.webp?v=city2k', description: 'An eight-second 1440p dark-fantasy landscape loop with wind-driven banners, flowing atmosphere, drifting leaves and distant bridge walkers. Concept film, not gameplay.' },
+      { title: 'Ruined city loop', label: 'Homepage motion', src: 'Media/ruined-city-loop.mp4?v=continuous', poster: 'Images/ruined-city-poster.webp?v=continuous', description: 'An eight-second 1440p dark-fantasy landscape loop with wind-driven banners, flowing atmosphere, drifting leaves and distant bridge walkers. Concept film, not gameplay.' },
       { title: 'Vanguard motion study', label: 'Character study', src: 'Media/vanguard-fight.mp4', poster: 'Images/portfolio-projects/gilded-fate-vanguard-portrait.webp', description: 'A Gilded Fate character motion study, presented as a concept film.' }
     ]
   };
