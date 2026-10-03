@@ -330,26 +330,60 @@
       hero.style.setProperty('--hp', p.toFixed(4));
       if (content) { content.style.transform = `translate3d(0,${p * -90}px,0)`; content.style.opacity = String(clamp(1 - p * 1.35, 0, 1)); }
     });
+    const portraitScreen = matchMedia('(max-aspect-ratio: 1/1)'), ultrawideScreen = matchMedia('(min-width: 1100px) and (min-aspect-ratio: 2/1)');
+    const filmForScreen = () => {
+      const scene = portraitScreen.matches ? 'portrait' : ultrawideScreen.matches ? 'ultrawide' : 'standard';
+      return { scene, src: scene === 'standard' ? video.dataset.src : video.dataset[`${scene}Src`], poster: scene === 'standard' ? video.dataset.standardPoster : video.dataset[`${scene}Poster`] };
+    };
+    if (video) {
+      const film = filmForScreen();
+      video.poster = film.poster;
+      hero.dataset.scene = film.scene;
+    }
     if (video && !reduced && !saveData) {
+      let started = false, selectedScene = '', loadNumber = 0, request = null, objectURL = null;
       const startFilm = async () => {
-        // Cache the complete short clip before playback so repeating it never
-        // waits for another network range request at the loop boundary.
+        started = true;
+        const film = filmForScreen();
+        if (selectedScene === film.scene) return;
+        selectedScene = film.scene;
+        hero.dataset.scene = film.scene;
+        const load = ++loadNumber;
+        request?.abort();
+        request = new AbortController();
+        video.pause();
+        video.classList.remove('is-ready');
+        video.poster = film.poster;
         video.preload = 'auto';
-        video.addEventListener('canplay', () => { video.classList.add('is-ready'); if (!userPaused && heroVisible && !d.hidden) video.play().catch(() => {}); }, { once: true });
+        video.autoplay = !userPaused && heroVisible && !d.hidden;
+        let source = film.src, nextURL = null;
+        // Download only the matching scene, then repeat the complete cached clip.
         try {
-          const response = await fetch(video.dataset.src, { cache: 'force-cache' });
+          const response = await fetch(film.src, { cache: 'force-cache', signal: request.signal });
           if (!response.ok) throw new Error('Film unavailable');
-          video.src = URL.createObjectURL(await response.blob());
-        } catch {
-          video.src = video.dataset.src;
+          const blob = await response.blob();
+          if (load !== loadNumber) return;
+          source = nextURL = URL.createObjectURL(blob);
+        } catch (error) {
+          if (error.name === 'AbortError' || load !== loadNumber) return;
         }
+        video.addEventListener('canplay', () => {
+          if (load !== loadNumber) return;
+          video.classList.add('is-ready');
+          if (!userPaused && heroVisible && !d.hidden) video.play().catch(() => {});
+          else video.pause();
+        }, { once: true });
+        video.src = source;
         video.load();
+        if (objectURL) URL.revokeObjectURL(objectURL);
+        objectURL = nextURL;
       };
       d.readyState === 'complete' ? setTimeout(startFilm, 400) : addEventListener('load', () => setTimeout(startFilm, 400), { once: true });
+      [portraitScreen, ultrawideScreen].forEach(query => query.addEventListener('change', () => { if (started) startFilm(); }));
       new IntersectionObserver(([e]) => { if (!video.src) return; e.isIntersecting && !userPaused ? video.play().catch(() => {}) : video.pause(); }).observe(hero);
       d.addEventListener('visibilitychange', () => { if (d.hidden) video.pause(); else if (heroVisible && !userPaused && video.src) video.play().catch(() => {}); });
       toggle?.addEventListener('click', () => {
-        userPaused = !video.paused;
+        userPaused = !userPaused;
         userPaused ? video.pause() : video.play().catch(() => {});
         toggle.textContent = userPaused ? 'Play film' : 'Pause film';
         toggle.setAttribute('aria-pressed', String(userPaused));
