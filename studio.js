@@ -602,7 +602,7 @@
       { title: 'Gilded Fate — Gameplay', label: 'Recorded gameplay', src: 'Media/gilded-fate-gameplay.mp4', poster: 'Images/portfolio-projects/gilded-fate-gameplay-poster.webp', description: 'Actual development footage from the current Unity build of Gilded Fate.' },
       { title: 'Exploding Nuts — Unity', label: 'Recorded gameplay', src: 'Media/exploding-nuts-unity-gameplay.mp4', poster: 'Images/portfolio-projects/exploding-nuts-unity-gameplay-poster.webp', description: 'The Unity / C# evolution of the Exploding Nuts arena roguelite.' },
       { title: 'GROVEFALL — Trailer V2', label: 'Archive · AI vision', src: 'Media/grovefall-trailer-v2.mp4?v=2', poster: 'Images/grovefall-trailer-v2-poster.webp?v=2', description: 'A previous GROVEFALL transition and sound pass.' },
-      { title: 'Ruined city loop', label: 'Homepage motion', src: 'Media/ruined-city-loop.mp4', poster: 'Images/ruined-city-poster.webp', description: 'An eight-second ambient dark-fantasy landscape loop for the portfolio home screen. Concept film, not gameplay.' },
+      { title: 'Ruined city loop', label: 'Homepage motion', src: 'Media/ruined-city-loop.mp4?v=city2k', poster: 'Images/ruined-city-poster.webp?v=city2k', description: 'An eight-second 1440p dark-fantasy landscape loop with wind-driven banners, flowing atmosphere, drifting leaves and distant bridge walkers. Concept film, not gameplay.' },
       { title: 'Vanguard motion study', label: 'Character study', src: 'Media/vanguard-fight.mp4', poster: 'Images/portfolio-projects/gilded-fate-vanguard-portrait.webp', description: 'A Gilded Fate character motion study, presented as a concept film.' }
     ]
   };
