@@ -321,12 +321,8 @@
   /* ------------------------------------------------------------------ hero */
   const hero = $('.hero');
   if (hero) {
-    const inner = $('.hero__media-inner', hero), content = $('.hero__content', hero), video = $('video[data-src]', hero), toggle = $('[data-film-toggle]', hero);
+    const content = $('.hero__content', hero), video = $('video[data-src]', hero), toggle = $('[data-film-toggle]', hero);
     let heroVisible = true, userPaused = false;
-    if (fine && !reduced) hero.addEventListener('pointermove', e => {
-      inner.style.setProperty('--mx', `${(e.clientX / innerWidth - .5) * -2.4}%`);
-      inner.style.setProperty('--my', `${(e.clientY / innerHeight - .5) * -2.4}%`);
-    });
     onScroll(y => {
       const h = hero.offsetHeight, p = clamp(y / h, 0, 1);
       heroVisible = p < 1;
@@ -606,7 +602,7 @@
       { title: 'Gilded Fate — Gameplay', label: 'Recorded gameplay', src: 'Media/gilded-fate-gameplay.mp4', poster: 'Images/portfolio-projects/gilded-fate-gameplay-poster.webp', description: 'Actual development footage from the current Unity build of Gilded Fate.' },
       { title: 'Exploding Nuts — Unity', label: 'Recorded gameplay', src: 'Media/exploding-nuts-unity-gameplay.mp4', poster: 'Images/portfolio-projects/exploding-nuts-unity-gameplay-poster.webp', description: 'The Unity / C# evolution of the Exploding Nuts arena roguelite.' },
       { title: 'GROVEFALL — Trailer V2', label: 'Archive · AI vision', src: 'Media/grovefall-trailer-v2.mp4?v=2', poster: 'Images/grovefall-trailer-v2-poster.webp?v=2', description: 'A previous GROVEFALL transition and sound pass.' },
-      { title: 'Portal world loop', label: 'Homepage motion', src: 'Media/portal-world-loop.mp4?v=portal3', poster: 'Images/portal-world.webp?v=portal3', description: 'A seamless ambient concept loop for the portfolio home screen. Concept film, not gameplay.' },
+      { title: 'Ruined city loop', label: 'Homepage motion', src: 'Media/ruined-city-loop.mp4', poster: 'Images/ruined-city-poster.webp', description: 'An eight-second ambient dark-fantasy landscape loop for the portfolio home screen. Concept film, not gameplay.' },
       { title: 'Vanguard motion study', label: 'Character study', src: 'Media/vanguard-fight.mp4', poster: 'Images/portfolio-projects/gilded-fate-vanguard-portrait.webp', description: 'A Gilded Fate character motion study, presented as a concept film.' }
     ]
   };
